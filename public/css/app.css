@@ -5,3 +5,32 @@ h1 {
 .customNav {
     background-color: gray;
 }
+
+.main-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.left-panel {
+    background-color: red;
+    width: 15%;
+    height: 100vh;
+}
+
+.center-panel {
+    background-color: blue;
+    width: 70%;
+    height: 100vh;
+}
+
+.right-panel {
+    background-color: black;
+    height: 100vh;
+    width: 15%;
+}
+
+.categories-checkbox {
+    display: flex;
+    flex-direction: column;
+}
