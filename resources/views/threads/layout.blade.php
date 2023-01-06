@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
     <link rel="stylesheet" href={{asset('css/app.css')}}>
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     <title>Kaalaman</title>
@@ -11,10 +12,10 @@
 <body>
     
    <div id="app">
-    <nav class="navbar navbar-expand-md navbar-light shadow-sm customNav">
+    <nav class="navbar sticky-top navbar-expand-md navbar-light shadow-sm customNav">
         <div class="container">
             <a class="navbar-brand" href="{{ url('/') }}">
-                {{ config('app.name', 'Laravel') }}
+                {{ config('app.name', 'Kaalaman') }}
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                 <span class="navbar-toggler-icon"></span>
@@ -65,7 +66,7 @@
         </div>
     </nav>
 
-    <main class="py-4">
+    <main>
         @yield('content')
     </main>
 </div>
