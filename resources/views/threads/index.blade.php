@@ -93,3 +93,44 @@
         </div>
     </div>
 @endsection
+
+
+@section('UserIcon')
+
+@guest
+@else
+<div class="user">
+    <div class="userDropDown headerIcons">
+      <img src=".//images/Avatar Users2_20.png" />
+      <a href="{{ route('logout') }}"
+                                 onclick="event.preventDefault();
+                                               document.getElementById('logout-form').submit();">
+                                  {{ __('Logout') }}
+                              </a>
+
+                              <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                  @csrf
+                              </form>
+
+      <div class="user-Section" id="userSection" style="display: none">
+        <span>Current User</span>
+        <button>Account Profile</button>
+        <button>Settings and Privacy</button>
+        <button>Customize</button>
+        <button>Help and Support</button>
+        <button>Give Feedback</button>
+        <button>Display and Accessibility</button>
+        <button>log-out</button>
+      </div>
+    </div>
+
+  
+    <div class="headerIcon">
+      <i class="fa-regular fa-bell headerIcons" id="notification"></i>
+      <i class="fa-regular fa-lightbulb headerIcons" id="darkmodeBtn"></i>
+    </div>
+    
+    {{-- sadasdas --}}
+  </div>
+  @endguest
+@endsection
