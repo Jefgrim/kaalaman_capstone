@@ -1,74 +1,264 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
-    <link rel="stylesheet" href={{asset('css/app.css')}}>
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kaalaman</title>
-</head>
-<body>
-    
-   <div id="app">
-    <nav class="navbar sticky-top navbar-expand-md navbar-light shadow-sm customNav">
-        <div class="container">
-            <a class="navbar-brand" href="{{ url('/') }}">
-                {{ config('app.name', 'Kaalaman') }}
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+    <link rel="stylesheet" href={{asset('css/app.css')}}>
+  </head>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <!-- Left Side Of Navbar -->
-                <ul class="navbar-nav me-auto">
+  <body>
+    <div class="mainContainer">
+     
+      <header>
+        
+        <img src="images/kaalaman-logo.png" class="logo" alt="" />
 
-                </ul>
+        <div class="user">
+          <div class="userDropDown headerIcons">
+            <img src=".//images/Avatar Users2_20.png" />
+            <div class="user-Section" id="userSection" style="display: none">
+              <span>Current User</span>
+              <button>Account Profile</button>
+              <button>Settings and Privacy</button>
+              <button>Customize</button>
+              <button>Help and Support</button>
+              <button>Give Feedback</button>
+              <button>Display and Accessibility</button>
+              <button>log-out</button>
+            </div>
+          </div>
 
-                <!-- Right Side Of Navbar -->
-                <ul class="navbar-nav ms-auto">
-                    <!-- Authentication Links -->
-                    @guest
-                        @if (Route::has('login'))
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('icon') }}</a>
-                            </li>
-                        @endif
+          <div class="headerIcon">
+            <i class="fa-regular fa-bell headerIcons" id="notification"></i>
+            <i class="fa-regular fa-lightbulb headerIcons" id="darkmodeBtn"></i>
+          </div>
 
-                        @if (Route::has('register'))
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                            </li>
-                        @endif
-                    @else
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ Auth::user()->name }}
-                            </a>
+        </div>
 
-                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('logout') }}"
-                                   onclick="event.preventDefault();
-                                                 document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
-                                </a>
+      </header>
+      
+      <div class="subContainer">
 
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                    @csrf
-                                </form>
-                            </div>
-                        </li>
-                    @endguest
-                </ul>
+        <div class="modular">
+          
+          <div class="expandPostThread"> 
+            <div class="postThreadContainer" >
+              <form class="postThreadContent">
+                <div class="h2Container">
+                  <h2 class="thread-post">CREATE A THREAD</h2>
+                  <i id="closeBtn" class="fa-regular fa-circle-xmark expandBtn"></i>
+                </div>
+  
+                <div class="category-title">
+                  <input
+                    type="text"
+                    placeholder="Title"
+                    id="expandedTitleInp"
+                    class="titleInp"
+                    required
+                  />
+                  <select id="expandedSelectCategory" class="selectCategory" required>
+                    <option value=""selected disabled>Select Category</option>
+                    <option value="Technology">Technology</option>
+                    <option value="E-commerce">E-Commerce</option>
+                    <option value="Health-Lifestyle">Health & Lifestyle</option>
+                    <option value="Games">Games</option>
+                    <option value="Food-Beverages">Food & Beverages</option>
+                  </select>
+                </div>
+                <div class="threadInpContainer">
+                  <textarea id="expandedThreadInp" class="threadInp" required></textarea>
+                </div>
+                <div class="threadBtnContainer">
+                  
+                  
+                  <button type="button" id="expandedPostBtn" class="postBtn">Post</button>
+                </div>
+              </form>
+            </div>
             </div>
         </div>
-    </nav>
 
-    <main>
-        @yield('content')
-    </main>
-</div>
-</body>
+        <div class="sidebar">
+          <div class="categoriesContainer">
+            <div class="categoryContainer">
+              <h2 class="categories-h2">Categories</h2>
+            </div>
+            <div class="categoryContainer">
+              <input type="checkbox" name="category" id="technologyBtn" /><label
+                for="Technology"
+                >Technology <span id="technologyCategoryCounter">0</span></label
+              >
+            </div>
+            <div class="categoryContainer">
+              <input type="checkbox" name="category" id="ecommerceBtn" /><label
+                for="E-Commerce"
+                >E-Commerce <span id="ecommCategoryCounter">0</span></label
+              >
+            </div>
+            <div class="categoryContainer">
+              <input type="checkbox" name="category" id="healthBtn" /><label
+                for="Health & lifestyle"
+                >Health & lifestyle <span id="healthCategoryCounter">0</span></label
+              >
+            </div>
+            <div class="categoryContainer">
+              <input type="checkbox" name="category" id="gameBtn" /><label
+                for="Games"
+                >Games <span id="gamesCategoryCounter">0</span></label
+              >
+            </div>
+            <div class="categoryContainer">
+              <input type="checkbox" name="category" id="foodBtn" /><label
+                for="Food"
+                >Food <span id="foodCategoryCounter">0</span></label
+              >
+            </div>
+            <div>
+              <button class="sideBarBtn">close</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="threadContainer">
+          <div class="threadNavContainer">
+            <div class="sideBar-toggle"><i class="fa-solid fa-bars"></i></div>
+            <div class="searchBar">
+              <input
+                type="text"
+                class="input searchBarinput"
+                placeholder="search"
+                id="seacrhInput"
+              />
+              <i class="fa-solid fa-magnifying-glass searchBarLogo"></i>
+              <div class="hidePostThreadBtn"><i class="fa-solid fa-pen-to-square"></i></div>
+            </div>
+          </div>
+
+          <div class="threadContentContainer">
+            @yield('threadContent')
+          </div>
+
+          <div class="creatorContainer">
+              <div class="donate">
+                Donate
+                <p class="donation">Your donations will be use for maintaining the website. We truly appreciate your support</p>
+                
+                <img class="gcash" src=".//images/gcash-logo-square-180x180.jpg">
+                
+              </div>
+                
+
+              <div class="links">
+             
+                <div>Links
+                <p class="links-2">FAQs</p>
+                  <p class="links-2">Forum Rules</p>
+                  <p class="links-2">Privacy Policy</p>
+                  <p class="links-2">Terms and Conditions</p>
+                  </div>
+                  <div class="other-links">
+                  <p class="links-2">Vision</p>
+                  <p class="links-2">Mission</p>
+                  <p class="links-2">Contact Us</p>
+                  <p class="links-2">Affiliate</p>
+                  
+
+                  </div>
+              </div>
+              
+
+              <div class="about">
+                About
+              
+              <p class="about-kaalaman">Kaalaman is an online forum community where people can get to share their knowledge and experiences regarding a certain topic. </p>
+              </div>
+
+              <div class="creator">
+                Creators
+                <div class="creatorDetailsContainer">
+                  <div>
+                    <img class="pic-creator" src=".//images/5.png">
+                  </div>
+                  <div class="creatorDetailsNameContainer">
+                    <span class="name">Nicky Esteban</span>
+                  </div>
+                </div>
+                
+                <div class="creatorDetailsContainer">
+                  <div>
+                    <img class="pic-creator" src=".//images/3.png">
+                  </div>
+                  <div class="creatorDetailsNameContainer">
+                    <span class="name">Jefgrim Alvar</span>
+                  </div>
+                </div> 
+                <div class="creatorDetailsContainer">   
+                  <div>
+                    <img class="pic-creator" src=".//images/6.png">
+                  </div>
+                  <div class="creatorDetailsNameContainer">
+                    <span class="name">Jomarie Cailing</span>
+                  </div>
+                </div> 
+            </div>
+              
+              
+          </div>
+        </div>
+
+        <div class="rightContainer">
+          <div class="postThreadContainer" >
+            <form class="postThreadContent">
+              <div class="h2Container">
+                <h2 class="thread-post">CREATE A THREAD</h2>
+                
+              </div>
+
+              <div class="category-title">
+                <input
+                  type="text"
+                  placeholder="Title"
+                  id="titleInp"
+                  class="titleInp"
+                  required
+                />
+
+                <select id="selectCategory" class="selectCategory" required>
+                  <option value="" selected disabled>Select Category</option>
+                  <option value="Technology">Technology</option>
+                  <option value="E-commerce">E-Commerce</option>
+                  <option value="Health-Lifestyle">Health & Lifestyle</option>
+                  <option value="Games">Games</option>
+                  <option value="Food-Beverages">Food & Beverages</option>
+                </select>
+              </div>
+              <div class="threadInpContainer">
+                <textarea id="threadInp" class="threadInp" required></textarea>
+              </div>
+              <div class="threadBtnContainer">
+                
+                <i id="expandBtn" class="fa-solid fa-maximize enlargebtn expandBtn"></i>
+                <button type="button" id="postBtn" class="postBtn">Post</button>
+              </div>
+            </form>
+          </div>
+        <div class="latestContainer">
+            <h3 class="latest">Latest post</h3>
+            <div class="latestContent">
+                @yield('latestContent')
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="main.js"></script>
+    <script
+      src="https://kit.fontawesome.com/26177573c7.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
