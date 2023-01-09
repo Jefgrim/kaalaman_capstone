@@ -17,6 +17,22 @@ Route::get('/', function () {
     return view('threads.index');
 });
 
+Route::get('/faq', function () {
+    return view('faq.index');
+});
+
+Route::get('/rules', function () {
+    return view('rules.index');
+});
+
+Route::get('/privacy-policy', function () {
+    return view('privacy.index');
+});
+
+Route::get('/terms-condition', function () {
+    return view('terms.index');
+});
+
 Route::get('/messages', function () {
     return view('threads.index');
 });
