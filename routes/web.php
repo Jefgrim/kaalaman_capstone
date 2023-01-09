@@ -17,6 +17,10 @@ Route::get('/', function () {
     return view('threads.index');
 });
 
+Route::get('/messages', function () {
+    return view('threads.index');
+});
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
