@@ -35,8 +35,15 @@
     @guest
         <form class="postThreadContent">
             <div class="h2Container">
-            <h2 class="thread-post">CREATE A THREAD</h2>
-            <p>Please Login To Create a Thread</p>
+            <h2 class="thread-post">Log-in  or Register Below</h2>
+           
+           
+                <a class="nav-link" href="{{ route('login') }}">Log-in</a> 
+                <a class="nav-link" href="{{ route('register') }}">Register</a>
+            
+
+            
+
             </div>
         </form>
     @else
