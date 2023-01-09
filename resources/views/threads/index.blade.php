@@ -31,6 +31,52 @@
     </div>
 @endsection
 
+@section('postThreadContent')
+    @guest
+        <form class="postThreadContent">
+            <div class="h2Container">
+            <h2 class="thread-post">CREATE A THREAD</h2>
+            <p>Please Login To Create a Thread</p>
+            </div>
+        </form>
+    @else
+        <form class="postThreadContent">
+            <div class="h2Container">
+            <h2 class="thread-post">CREATE A THREAD</h2>
+            
+            </div>
+        
+            <div class="category-title">
+            <input
+                type="text"
+                placeholder="Title"
+                id="titleInp"
+                class="titleInp"
+                required
+            />
+        
+            <select id="selectCategory" class="selectCategory" required>
+                <option value="" selected disabled>Select Category</option>
+                <option value="Technology">Technology</option>
+                <option value="E-commerce">E-Commerce</option>
+                <option value="Health-Lifestyle">Health & Lifestyle</option>
+                <option value="Games">Games</option>
+                <option value="Food-Beverages">Food & Beverages</option>
+            </select>
+            </div>
+            <div class="threadInpContainer">
+            <textarea id="threadInp" class="threadInp" required></textarea>
+            </div>
+            <div class="threadBtnContainer">
+            
+            <i id="expandBtn" class="fa-solid fa-maximize enlargebtn expandBtn"></i>
+            <button type="button" id="postBtn" class="postBtn">Post</button>
+            </div>
+      </form>
+    @endguest
+
+@endsection
+
 @section('latestContent')
     <div class="content-box">
         <img src=".//images/Avatar Users2_1.png" class="avatar">
