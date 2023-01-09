@@ -1,80 +1,127 @@
-<!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kaalaman</title>
+    <link rel="stylesheet" href={{asset('css/app.css')}}>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  </head>
 
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+  <body>
+    <div class="mainContainer">
+     
+      <header>
+        
+        <img src="images/kaalaman-logo.png" class="logo" alt="" />
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+        <div class="user">
+         
+        </div>
 
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+      </header>
+      
+      <div class="subContainer">
 
-    <!-- Scripts -->
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
-</head>
-<body>
-    <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav me-auto">
+        <div class="sidebar">
+         
+        </div>
 
-                    </ul>
+        <div class="threadContainer">
+          <div class="threadNavContainer">
+           
+           
+          </div>
 
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ms-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                            @if (Route::has('login'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                </li>
-                            @endif
+          <div class="threadContentContainer">
 
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
-                        @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
-                                </a>
+        @yield('login')
+        @yield('register')
+          </div>
 
-                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
+          <div class="creatorContainer">
+              <div class="donate">
+                Donate
+                <p class="donation">Your donations will be use for maintaining the website. We truly appreciate your support</p>
+                
+                <img class="gcash" src=".//images/gcash-logo-square-180x180.jpg">
+                
+              </div>
+                
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
-                    </ul>
+              <div class="links">
+             
+                <div>Links
+                <p class="links-2">FAQs</p>
+                  <p class="links-2">Forum Rules</p>
+                  <p class="links-2">Privacy Policy</p>
+                  <p class="links-2">Terms and Conditions</p>
+                  </div>
+                  <div class="other-links">
+                  <p class="links-2">Vision</p>
+                  <p class="links-2">Mission</p>
+                  <p class="links-2">Contact Us</p>
+                  <p class="links-2">Affiliate</p>
+                  
+
+                  </div>
+              </div>
+              
+
+              <div class="about">
+                About
+              
+              <p class="about-kaalaman">Kaalaman is an online forum community where people can get to share their knowledge and experiences regarding a certain topic. </p>
+              </div>
+
+              <div class="creator">
+                Creators
+                <div class="creatorDetailsContainer">
+                  <div>
+                    <img class="pic-creator" src=".//images/5.png">
+                  </div>
+                  <div class="creatorDetailsNameContainer">
+                    <span class="name">Nicky Esteban</span>
+                  </div>
                 </div>
+                
+                <div class="creatorDetailsContainer">
+                  <div>
+                    <img class="pic-creator" src=".//images/3.png">
+                  </div>
+                  <div class="creatorDetailsNameContainer">
+                    <span class="name">Jefgrim Alvar</span>
+                  </div>
+                </div> 
+                <div class="creatorDetailsContainer">   
+                  <div>
+                    <img class="pic-creator" src=".//images/6.png">
+                  </div>
+                  <div class="creatorDetailsNameContainer">
+                    <span class="name">Jomarie Cailing</span>
+                  </div>
+                </div> 
             </div>
-        </nav>
+              
+              
+          </div>
+        </div>
 
-        <main class="py-4">
-            @yield('content')
-        </main>
+        <div class="rightContainer">
+          
+       
+          
+        </div>
+      </div>
     </div>
-</body>
+
+    <script type="module" src="main.js"></script>
+    <script
+      src="https://kit.fontawesome.com/26177573c7.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
