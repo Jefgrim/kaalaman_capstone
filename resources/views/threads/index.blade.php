@@ -33,17 +33,17 @@
 
 @section('postThreadContent')
     @guest
-        <form class="postThreadContent">
+        <form class="guestPostThreadContent">
             <div class="h2Container">
-            <h2 class="thread-post">Log-in  or Register Below</h2>
+            <h2 class="guestthread-post">Log-in  or Register Below</h2>
            
-           
-                <a class="nav-link" href="{{ route('login') }}">Log-in</a> 
-                <a class="nav-link" href="{{ route('register') }}">Register</a>
-            
-
-            
-
+        </div>
+        <div class="guestSidebar">
+                 
+            <a class="Log-in" href="{{ route('login') }}">Log-in</a> 
+               
+            <a class="Register" href="{{ route('register') }}">Register</a>
+               
             </div>
         </form>
     @else
