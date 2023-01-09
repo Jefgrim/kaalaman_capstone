@@ -872,6 +872,15 @@ header {
   
 
 }
+
+.noSidePanelSubContainer {
+  height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  justify-content: center;
+}
+
 @media screen and (max-width: 1024px) {
 
 
