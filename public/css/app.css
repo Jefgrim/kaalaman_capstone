@@ -827,13 +827,51 @@ header {
 }
 
 /* like dislike */
+.guestthread-post{
+  text-align: center;
+}
+  
 
 
+.guestPostThreadContent{
+  
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
 
-.nav-link{
- text-decoration: none;
+}
+.guestSidebar{
+  display:flex;
+  flex-direction: column;
 }
 
+.Log-in{
+  background-color: #008968;
+  text-decoration: none;
+  color: white;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+ 
+
+}
+
+.Register{
+  background-color:rgba(245, 222, 179, 0.712);
+  color: white;
+  border-radius: 20px;
+  text-decoration: none;
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+ 
+  
+
+}
 
 .noSidePanelSubContainer {
   height: calc(100vh - 80px);
