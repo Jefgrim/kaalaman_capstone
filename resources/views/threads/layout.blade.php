@@ -13,7 +13,7 @@
      
       <header>
         
-        <img src="images/kaalaman-logo.png" class="logo" alt="" />
+        <img src={{asset("images/kaalaman-logo.png")}} class="logo" alt="" />
        @yield('UserIcon')
 
       </header>
@@ -125,7 +125,7 @@
                 Donate
                 <p class="donation">Your donations will be use for maintaining the website. We truly appreciate your support</p>
                 
-                <img class="gcash" src=".//images/gcash-logo-square-180x180.jpg">
+                <img class="gcash" src="./images/gcash-logo-square-180x180.jpg">
                 
               </div>
                 
@@ -133,17 +133,16 @@
               <div class="links">
              
                 <div>Links
-                <p class="links-2">FAQs</p>
-                  <p class="links-2">Forum Rules</p>
-                  <p class="links-2">Privacy Policy</p>
-                  <p class="links-2">Terms and Conditions</p>
+                  <p class="links-2"><a class="footerLinks" href="/faq">FAQs</a></p>
+                  <p class="links-2"><a  class="footerLinks" href="/rules">Forum Rules</a></p>
+                  <p class="links-2"><a class="footerLinks" href="/privacy-policy">Privacy Policy</a></p>
+                  <p class="links-2"><a class="footerLinks" href="/terms-condition"> Terms and Conditions</a></p>
                   </div>
                   <div class="other-links">
-                  <p class="links-2">Vision</p>
-                  <p class="links-2">Mission</p>
-                  <p class="links-2">Contact Us</p>
-                  <p class="links-2">Affiliate</p>
-                  
+                    <p class="links-2"><a href="/vision" class="footerLinks">Vision</a></p>
+                    <p class="links-2"><a href="/mission" class="footerLinks">Mission</a></p>
+                    <p class="links-2"><a href="/contactUs" class="footerLinks">Contact-us</a></p>
+                 
 
                   </div>
               </div>
@@ -159,7 +158,7 @@
                 Creators
                 <div class="creatorDetailsContainer">
                   <div>
-                    <img class="pic-creator" src=".//images/5.png">
+                    <img class="pic-creator" src="./images/5.png">
                   </div>
                   <div class="creatorDetailsNameContainer">
                     <span class="name">Nicky Esteban</span>
@@ -168,7 +167,7 @@
                 
                 <div class="creatorDetailsContainer">
                   <div>
-                    <img class="pic-creator" src=".//images/3.png">
+                    <img class="pic-creator" src="./images/3.png">
                   </div>
                   <div class="creatorDetailsNameContainer">
                     <span class="name">Jefgrim Alvar</span>
@@ -176,7 +175,7 @@
                 </div> 
                 <div class="creatorDetailsContainer">   
                   <div>
-                    <img class="pic-creator" src=".//images/6.png">
+                    <img class="pic-creator" src="./images/6.png">
                   </div>
                   <div class="creatorDetailsNameContainer">
                     <span class="name">Jomarie Cailing</span>
