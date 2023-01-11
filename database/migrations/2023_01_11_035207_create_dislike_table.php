@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('dislike', function (Blueprint $table) {
-            $table->id("dislike");
+            $table->id();
             $table->foreignId("userId")->constrained('users');
             $table->foreignId("threadId")->constrained('thread');
             $table->timestamps();
