@@ -22,7 +22,7 @@ Route::get('/faq', function () {
 });
 
 Route::get('/rules', function () {
-    return view('rules.index');
+    return view('forumRules.index');
 });
 
 Route::get('/privacy-policy', function () {
@@ -36,6 +36,24 @@ Route::get('/terms-condition', function () {
 Route::get('/messages', function () {
     return view('threads.index');
 });
+Route::get('/account',function (){
+    return view('accountProfile.index');
+});
+
+Route::get('/vision',function (){
+    return view('vision.index');
+});
+
+Route::get('/mission',function (){
+    return view('mission.index');
+});
+
+
+Route::get('/contactUs',function (){
+    return view('Contact Us.index');
+});
+
+
 
 Auth::routes();
 

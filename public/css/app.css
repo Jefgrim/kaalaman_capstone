@@ -41,12 +41,17 @@ header {
   height: 60px !important;
 }
 
+
 .headerIcon {
   display: flex;
   justify-content: space-evenly;
   margin: 10px;
 }
 
+.guestIcon{
+  font-size: xx-large;
+  color: white;
+}
 .logo {
   height: 50px;
   margin-left: 20px;
@@ -69,16 +74,31 @@ header {
 }
 
 .user-Section {
-  height: 165px;
+  
   width: 200px;
   background-color: var(--primary-color);
   position: absolute;
   z-index: 1;
-  margin-top: 250px;
+  margin-top: 110px;
   display: flex;
   flex-direction: column;
   color:var(--third-color);
 
+}
+.guestUser-Section{
+  width: 200px;
+  background-color: var(--primary-color);
+  position: absolute;
+  z-index: 1;
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  color:var(--third-color);
+}
+
+.lagout{
+text-decoration: none;
+color: black;
 }
 
 
@@ -869,8 +889,6 @@ header {
   text-align: center;
   width: 100%;
  
-  
-
 }
 
 .noSidePanelSubContainer {
@@ -880,6 +898,44 @@ header {
   position: relative;
   justify-content: center;
 }
+
+
+.centerContainer{
+  background-color:var(--primary-color);
+  height: 80%;
+  width: 100%;
+  margin-top: 20px;
+  border-radius: 10px;
+  overflow-y: scroll;
+  color: white  ;
+}
+
+.centerContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.centerContent{
+  margin: 10px;
+}
+
+
+.termConditionContainer{
+
+  background-color: #008968;
+  height: 80%;
+  width: 100%;
+}
+
+.footerLinks{
+  text-decoration: none;
+  color: white;
+}
+
+.footerLinks:hover{
+  color:blue;
+}
+
+
 
 @media screen and (max-width: 1024px) {
 
