@@ -11,39 +11,9 @@ class Thread extends Model
     use HasFactory;
     protected $table = 'thread';
     protected $primaryKey = 'threadId';
-    protected $fillable = ['userId', 'threadpost', 'title', 'category', 'threadId', 'like', 'dislike', 'commentId'];
+    protected $fillable = ['userId', 'threadpost', 'title', 'category', 'threadId'];
 
-    protected function like(): Attribute
-    {
-        return Attribute::make(
-            get: fn ($value) => json_decode($value, true),
-            set: fn ($value) => json_encode($value),
-        );
-    } 
-
-    protected function dislike(): Attribute
-    {
-        return Attribute::make(
-            get: fn ($value) => json_decode($value, true),
-            set: fn ($value) => json_encode($value),
-        );
-    } 
-
-    protected function commentId(): Attribute
-    {
-        return Attribute::make(
-            get: fn ($value) => json_decode($value, true),
-            set: fn ($value) => json_encode($value),
-        );
-    } 
-
-    /**
-     * The attributes that should be cast.
-     *
-     * @var array<string, string>
-     */
-    protected $casts = [
-        'like' => 'array',
-    ];
-
+    public function users(){
+        return $this->belongsTo("App\Models\User", "userId");
+    }
 }
