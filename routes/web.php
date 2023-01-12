@@ -14,9 +14,9 @@ use App\Http\Controllers\ThreadController;
 |
 */
 
-Route::get('/', function () {
-    return view('threads.index');
-});
+// Route::get('/', function () {
+//     return view('threads.index');
+// });
 
 Route::get('/faq', function () {
     return view('faq.index');
@@ -58,5 +58,6 @@ Route::get('/contactUs',function (){
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('test', [ThreadController::class, 'index']);
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::post("create/thread", [ThreadController::class, 'store']);
+Route::get("/", [ThreadController::class, 'index']);

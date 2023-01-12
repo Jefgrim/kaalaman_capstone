@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Thread; //add contact model, since model gets the data from the database
+use Illuminate\Support\Facades\Auth;
 
 class ThreadController extends Controller
 {
@@ -15,41 +16,9 @@ class ThreadController extends Controller
      */
     public function index()
     {
-       
-    //    $thread = Thread::all();
-         //->with('thread', $thread);
-
-        $input = [
-            
-            'userId' => '1',
-            'title' => 'how to train a dragon',
-            'category' => 'other category',
-            'threadpost' => 'anyone knows how to train a dragon?',
-
-
-            'like' => [
-                '1' => '1'
-               
-            ],
-            'dislike' => [
-                '1' => '1'
-                
-            ],
-
-            'commentId' => [
-                '1' => '1'
-               
-            ]
-
-          
-        ];
-  
-        $thread = Thread::create($input);
-  
-        dd($thread->like);
-        dd($thread->dislike);
-
-        return view('threads.index');
+        $threads = Thread::with("users")->get();
+        $latestPost = Thread::with("users")->get()->last();
+        return view('threads.index')->with('threads' , $threads)->with('latestPost', $latestPost);
     }
 
     /**
@@ -59,7 +28,7 @@ class ThreadController extends Controller
      */
     public function create()
     {
-        //
+      //
     }
 
     /**
@@ -70,7 +39,13 @@ class ThreadController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $thread = new Thread;
+        $thread->userId = Auth::id(); 
+        $thread->title = $request->title;
+        $thread->category = $request->category;
+        $thread->threadpost = $request->threadpost;
+        $thread->save();
+        return redirect('/');
     }
 
     /**
