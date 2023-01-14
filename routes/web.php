@@ -59,5 +59,5 @@ Route::get('/contactUs',function (){
 Auth::routes();
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::post("create/thread", [ThreadController::class, 'store']);
+Route::post("/", [ThreadController::class, 'store']);
 Route::get("/", [ThreadController::class, 'index']);
