@@ -48,7 +48,7 @@
                 Donate
                 <p class="donation">Your donations will be use for maintaining the website. We truly appreciate your support</p>
                 
-                <img class="gcash" src=".//images/gcash-logo-square-180x180.jpg">
+                <img class="gcash" src="/images/gcash-logo-square-180x180.jpg">
                 
               </div>
                 
@@ -82,7 +82,7 @@
                 Creators
                 <div class="creatorDetailsContainer">
                   <div>
-                    <img class="pic-creator" src=".//images/5.png">
+                    <img class="pic-creator" src="/images/5.png">
                   </div>
                   <div class="creatorDetailsNameContainer">
                     <span class="name">Nicky Esteban</span>
@@ -91,7 +91,7 @@
                 
                 <div class="creatorDetailsContainer">
                   <div>
-                    <img class="pic-creator" src=".//images/3.png">
+                    <img class="pic-creator" src="/images/3.png">
                   </div>
                   <div class="creatorDetailsNameContainer">
                     <span class="name">Jefgrim Alvar</span>
@@ -99,7 +99,7 @@
                 </div> 
                 <div class="creatorDetailsContainer">   
                   <div>
-                    <img class="pic-creator" src=".//images/6.png">
+                    <img class="pic-creator" src="/images/6.png">
                   </div>
                   <div class="creatorDetailsNameContainer">
                     <span class="name">Jomarie Cailing</span>
