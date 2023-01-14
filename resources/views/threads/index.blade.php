@@ -49,8 +49,8 @@
             </div>
         </form>
     @else
-        <form class="postThreadContent" action="create/thread" method="post">
-            @csrf
+        <form class="postThreadContent" action="/" method="post">
+            {{ csrf_field() }}
             <div class="h2Container">
             <h2 class="thread-post">CREATE A THREAD</h2>
             

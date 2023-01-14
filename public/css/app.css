@@ -935,6 +935,58 @@ color: black;
   color:blue;
 }
 
+.accordion {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.accordion .contentBoxFaq {
+  position: relative;
+  margin: 10px 20px;
+  width: 80%;
+}
+
+.accordion .contentBoxFaq .labelFaq {
+  position: relative;
+  padding: 10px;
+  background-color:#575757;
+}
+
+.accordion .contentBoxFaq .labelFaq::before {
+  content: '+';
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  font-size: 1.5em;
+}
+
+.accordion .contentBoxFaq.active .labelFaq::before {
+  content: '-';
+}
+.accordion .contentBoxFaq .contentFaq {
+  position: relative;
+  background-color: whitesmoke;
+  height: 0;
+  overflow: hidden;
+  transition: 0.5s;
+  color: black;
+  overflow-y: auto;
+
+}
+
+.accordion .contentBoxFaq.active .contentFaq {
+  height: 100px;
+  padding: 10px;
+}
+
+.forumrules {
+  font-size: 24px;
+}
+
 
 
 @media screen and (max-width: 1024px) {
