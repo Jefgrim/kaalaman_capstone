@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Thread; //add contact model, since model gets the data from the database
 use Illuminate\Support\Facades\Auth;
+use App\Events\newThreadPost;
 
 class ThreadController extends Controller
 {
@@ -45,6 +46,20 @@ class ThreadController extends Controller
         $thread->category = $request->category;
         $thread->threadpost = $request->threadpost;
         $thread->save();
+
+        $username = Auth::user()->name;
+        $title = request()->title;
+        $category = request()->category;
+        $threadpost = request()->threadpost;
+
+        $newThread = [
+            'username' => $username,
+            'title' => $title,
+            'category' => $category,
+            'threadpost' => $threadpost
+        ];
+    
+        event(new newThreadPost($newThread));
         return redirect('/');
     }
 

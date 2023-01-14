@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kaalaman</title>
     <link rel="stylesheet" href={{asset('css/app.css')}}>
+    <script src="https://js.pusher.com/7.2/pusher.min.js"></script>
   </head>
 
   <body>
@@ -200,7 +201,8 @@
         </div>
       </div>
     </div>
-
+    
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
     <script type="module" src="main.js"></script>
     <script
       src="https://kit.fontawesome.com/26177573c7.js"
