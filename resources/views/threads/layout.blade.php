@@ -181,7 +181,7 @@
                   <div class="other-links">
                     <p class="links-2"><a href="/vision" class="footerLinks">Vision</a></p>
                     <p class="links-2"><a href="/mission" class="footerLinks">Mission</a></p>
-                    <p class="links-2"><a href="/contactUs" class="footerLinks">Contact-us</a></p>
+                    <p class="links-2"><a href="/contactUs" class="footerLinks">Contact Us</a></p>
                  
 
                   </div>
