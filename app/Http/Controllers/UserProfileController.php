@@ -54,8 +54,8 @@ class UserProfileController extends Controller
         // } else if(Auth::user()->id != $id){
         //     return redirect('/');
         // }
-
-        return view('profile.index');
+        $userProfile = UserProfile::find($id);
+        return view('profile.index')->with('userProfile' , $userProfile);
     }
 
     /**

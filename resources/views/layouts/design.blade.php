@@ -63,7 +63,7 @@
             @yield('privacy-policy')
             @yield('Terms-Condition')
             @yield('forum-rules')
-            @yield('accountSettings')
+            @yield('userProfile')
             @yield('vision')
             @yield('mission')
             @yield('contact-us')
