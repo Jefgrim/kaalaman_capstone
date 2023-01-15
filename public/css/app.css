@@ -109,6 +109,13 @@ background-color: #008968;
 border-radius: 10px;
 }
 
+.content-404{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 
 #darkmodeBtn,
 #notification {
