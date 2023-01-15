@@ -1008,6 +1008,10 @@ a{
   color: #F3EFE0;
 }
 
+.categoryContainer span {
+  color: #008968;
+}
+
 
 @media screen and (max-width: 1024px) {
 
