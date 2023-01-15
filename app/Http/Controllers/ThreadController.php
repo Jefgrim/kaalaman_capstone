@@ -71,7 +71,10 @@ class ThreadController extends Controller
      */
     public function show($id)
     {
-        //
+        $thread = Thread::with("users")->find($id);
+        
+        // return $thread;
+        return view('comments.index')->with('thread' , $thread);
     }
 
     /**
