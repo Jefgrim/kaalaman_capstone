@@ -3,7 +3,15 @@ import Darkmode from "./js/darkmode.js";
 import filterCategories from "./js/filterCategories.js";
 import liveUpdate from "./js/liveupdate.js";
 
+const accordion = document.getElementsByClassName('contentBoxFaq');
 
+for (let i = 0; i<accordion.length; i++ ){
+    
+    accordion[i].addEventListener('click', function(){
+        console.log('test')
+        this.classList.toggle('active')
+    })
+}
 //dropdown user
 let userdropdown =document.querySelector(".userDropDown")
 
@@ -27,15 +35,7 @@ healthBtn.addEventListener("change",filterCategories)
 gameBtn.addEventListener("change",filterCategories)
 foodBtn.addEventListener("change",filterCategories)
 
-const accordion = document.getElementsByClassName('contentBoxFaq');
 
-for (let i = 0; i<accordion.length; i++ ){
-    
-    accordion[i].addEventListener('click', function(){
-        console.log('test')
-        this.classList.toggle('active')
-    })
-}
 
 
 
