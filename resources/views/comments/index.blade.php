@@ -1,5 +1,9 @@
 @extends('layouts.design')
 
+@section('title')
+    {{$thread->title}}
+@endsection
+
 @section('UserIcon')
     @guest
         <div class="user">
