@@ -71,4 +71,9 @@ Route::get("/", [ThreadController::class, 'index']);
 
 Route::resource("/thread", ThreadController::class);
 Route::resource("/profile", UserProfileController::class);
+
 Auth::routes();
+
+
+ 
+ Route::get('/', [ThreadController::class, 'searchThread']);
