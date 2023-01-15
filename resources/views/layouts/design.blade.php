@@ -71,6 +71,7 @@
             @yield('login')
             @yield('fPassword')
             @yield('register')
+            @yield('404')
           </div>
 
           <div class="creatorContainer">

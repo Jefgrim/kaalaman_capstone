@@ -55,6 +55,9 @@ class UserProfileController extends Controller
         //     return redirect('/');
         // }
         $userProfile = UserProfile::find($id);
+        if ($userProfile == null){
+            return redirect("/404");
+        }
         return view('profile.index')->with('userProfile' , $userProfile);
     }
 

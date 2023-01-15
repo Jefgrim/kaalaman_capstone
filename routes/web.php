@@ -55,6 +55,11 @@ Route::get('/contactUs',function (){
     return view('Contact Us.index');
 });
 
+Route::get('/404',function (){
+    return view('404.index');
+});
+
+
 
 
 
