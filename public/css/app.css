@@ -101,6 +101,14 @@ text-decoration: none;
 color: black;
 }
 
+.home_404{
+text-decoration: none;
+color: black;
+padding: 10px;
+background-color: #008968;
+border-radius: 10px;
+}
+
 
 #darkmodeBtn,
 #notification {
