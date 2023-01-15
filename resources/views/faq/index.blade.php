@@ -1,5 +1,9 @@
 @extends('layouts.design')
 
+@section('title')
+    FAQ
+@endsection
+
 @section('faqContent')
 
 <div class="centerContainer"> 

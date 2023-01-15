@@ -1,5 +1,9 @@
 @extends('layouts.design')
 
+@section('title')
+    Mission
+@endsection
+
 @section('mission')
   <div class="centerContainer">
     <div class="centerContent">
