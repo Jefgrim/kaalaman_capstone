@@ -10,8 +10,8 @@ class Thread extends Model
 {
     use HasFactory;
     protected $table = 'thread';
-    protected $primaryKey = 'threadId';
-    protected $fillable = ['userId', 'threadpost', 'title', 'category', 'threadId'];
+    protected $primaryKey = 'id';
+    protected $fillable = ['userId', 'threadpost', 'title', 'category', 'id'];
 
     public function users(){
         return $this->belongsTo("App\Models\User", "userId");

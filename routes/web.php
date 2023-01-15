@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ThreadController;
+use App\Http\Controllers\UserProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -56,8 +57,13 @@ Route::get('/contactUs',function (){
 
 
 
-Auth::routes();
 
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::post("/", [ThreadController::class, 'store']);
 Route::get("/", [ThreadController::class, 'index']);
+// Route::resources([
+//     'thread' => ThreadController::class,
+//     'profile' => ProfileController::class,
+// ]);
+
+Route::resource("/thread", ThreadController::class);
+Route::resource("/profile", UserProfileController::class);
+Auth::routes();
