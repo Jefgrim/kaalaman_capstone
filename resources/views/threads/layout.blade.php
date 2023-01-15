@@ -7,6 +7,8 @@
     <title>Kaalaman</title>
     <link rel="stylesheet" href={{asset('css/app.css')}}>
     <script src="https://js.pusher.com/7.2/pusher.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    
   </head>
 
   <body>
@@ -146,6 +148,7 @@
                 class="input searchBarinput"
                 placeholder="search"
                 id="seacrhInput"
+                name="seacrhInput"
               />
               <i class="fa-solid fa-magnifying-glass searchBarLogo"></i>
               <div class="hidePostThreadBtn"><i class="fa-solid fa-pen-to-square"></i></div>
@@ -153,6 +156,7 @@
           </div>
 
           <div class="threadContentContainer">
+
             @yield('threadContent')
           </div>
 
@@ -236,10 +240,38 @@
         </div>
       </div>
     </div>
-    
+
+
+    <script type="text/javascript">
+        
+      $('#seacrhInput').on('keyup',function() {
+     
+       $value=$(this).val();
+        $.ajax({
+          type:'get',
+          url:'{{URL::to('/')}}',
+          data:{'seacrhInput':$value},
+
+          success:function(data){
+            console.log(data);
+            $('.threadContentContainer').html(data)
+          }
+
+        })
+      })
+      
+    </script> 
+
+       <script type="text/javascript">
+       $.ajaxSetup({ headers: { 'csrftoken' : '{{ csrf_token() }}' } });
+        </script> 
+
     <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
     <script type="module" src={{asset("main.js")}}></script>
+    
+    
     <script
+    
       src="https://kit.fontawesome.com/26177573c7.js"
       crossorigin="anonymous"
     ></script>

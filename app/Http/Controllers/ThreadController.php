@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Thread; //add contact model, since model gets the data from the database
 use Illuminate\Support\Facades\Auth;
 use App\Events\newThreadPost;
+use DB;
 
 class ThreadController extends Controller
 {
@@ -113,4 +114,65 @@ class ThreadController extends Controller
     {
         //
     }
+     /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function searchThread(Request $request)
+    {
+        
+        $threads = Thread::with("users")->get();
+        $filteredThread = Thread::with("users")->where('title','LIKE','%'.$request->seacrhInput."%")
+        ->orWhere('category','LIKE','%'.$request->seacrhInput."%")
+        ->orWhere('threadpost','LIKE','%'.$request->seacrhInput."%")->get();
+        $latestPost = Thread::with("users")->get()->last();
+        if($request->ajax()){
+            $output = "";
+
+            // $thread=Thread::where('title','Like','%'.$request->search.'%')
+            // ->orWhere('category','Like','%'.$request->search.'%')->get();
+    
+            // $threads=DB::table('thread')->where('title','LIKE','%'.$request->seacrhInput."%")->get();
+            if($filteredThread)
+         {
+          foreach ($filteredThread  as $key => $thread) 
+          {
+           $output.=
+        '<div class="threadContent '.$thread->category.'">'.
+                '<div class="avatarTextsContainer">'.
+                    '<div class="threadUserAvatar">'.
+                        '<img src=".//images/Avatar Users2_1.png">'.
+                        '<span>'.$thread->users->name.'</span>'.
+                    '</div>'.
+                    '<div class="threadTextsContainer">'.
+                        '<div class="threadTexts">'.
+                            '<span>'.$thread->category.'</span>'.
+                            '<span style="font-size: larger;">'.$thread->title.'</span>'.
+                            '<span>'.$thread->threadpost.'</span>'.
+                        '</div>'.
+                    '</div>'.
+                '</div>'.
+                '<div class="threadReaction">'.
+                    '<div class="thumbsUpDownContainer">'.
+                        '<div class="threadThumbsUp">'.
+                            '<i class="fa-regular fa-thumbs-up" id="likepost5">'.'</i>'.
+                        '</div>'.
+                        '<div class="threadThumbsDown">'.
+                            '<i class="fa-regular fa-thumbs-down" id="dislikepost5">'.'</i>'.
+                        '</div>'.
+                    '</div>'.
+                    '<div class="replyBtnContainer">'.
+                        '<a href="/thread/'.$thread->id.'">'.'<i class="fa-solid fa-comment-dots">'.'</i>'.'</a>'.
+                    '</div>'.
+                '</div>'.
+       '</div>';
+         }
+        return Response($output);
+         }
+        }
+
+        return view('threads.index')->with('threads' , $threads)->with('latestPost', $latestPost);
+  }
 }
