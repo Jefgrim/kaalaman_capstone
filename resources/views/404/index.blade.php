@@ -1,5 +1,9 @@
 @extends('layouts.design')
 
+@section('title')
+    404 Not Found
+@endsection
+
 @section('404')
 <div class="centerContainer"> 
     <div class="centerContent">
