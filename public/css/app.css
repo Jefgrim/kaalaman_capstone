@@ -1000,6 +1000,10 @@ a {
 .mission {
     margin-top: 20px;
 }
+
+.rules {
+    margin-top: 20px;
+}
 @media screen and (max-width: 1024px) {
     .sidebar,
     .rightContainer {

@@ -8,7 +8,7 @@
 <div class="centerContainer">
   <div class="centerContent">
     <a class="footerLinks" href="/"><i class="fa-solid fa-house"></i></a>
-    <h2>Forum Rules</h2>
+    <h2 class="rules">Forum Rules</h2>
     <p class="forumrules">
       Moderators have complete discretion over what is and is not acceptable on the site and their decisions are final. Public discussion of Moderator decisions is not permitted. If you have any concerns or queries, please discuss it in private with the Moderator.
 
