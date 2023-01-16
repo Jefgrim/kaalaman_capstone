@@ -1,9 +1,5 @@
 @extends('layouts.design')
 
-@section('title')
-    Visison
-@endsection
-
 @section('UserIcon')
 
 @guest
@@ -58,6 +54,8 @@
 <div class="centerContainer"> 
   <div class="centerContent"> 
     <a class="footerLinks" href="/"><i class="fa-solid fa-house"></i></a>
+    <h2 class="vision">Vision</h2>
+    <p>Our vision is to be the most visited online forum that offers relevant information to Filipino people.</p>
 
   </div>
 </div>
