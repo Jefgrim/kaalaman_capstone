@@ -1,5 +1,9 @@
 @extends('layouts.design')
 
+@section('title')
+    Privacy Policy
+@endsection
+
 @section('privacy-policy')
 
 <div class="centerContainer"> 

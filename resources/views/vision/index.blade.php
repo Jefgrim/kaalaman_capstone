@@ -1,5 +1,9 @@
 @extends('layouts.design')
 
+@section('title')
+    Visison
+@endsection
+
 @section('UserIcon')
 
 @guest

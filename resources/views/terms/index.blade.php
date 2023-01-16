@@ -1,5 +1,9 @@
 @extends('layouts.design')
 
+@section('title')
+    Terms and Condition
+@endsection
+
 @section('Terms-Condition')
 
 <div class="centerContainer">
