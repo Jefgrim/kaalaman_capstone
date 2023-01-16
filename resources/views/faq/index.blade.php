@@ -5,8 +5,10 @@
 <div class="centerContainer"> 
   <div class="centerContent"> 
     <a class="footerLinks" href="/"><i class="fa-solid fa-house"></i></a>
+    
     <div class="accordion">
         <div class="contentBoxFaq">
+            <h2>FAQs</h2>
             <div class="labelFaq">Can I post a thread as a guest?</div>
                 <div class="contentFaq">
                     <p>
