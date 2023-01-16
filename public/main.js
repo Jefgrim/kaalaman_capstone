@@ -4,8 +4,6 @@ import filterCategories from "./js/filterCategories.js";
 import liveUpdate from "./js/liveupdate.js";
 import categoriesCounter from "./js/categoriesCounter.js"
 
-categoriesCounter()
-
 const accordion = document.getElementsByClassName('contentBoxFaq');
 
 for (let i = 0; i<accordion.length; i++ ){
@@ -39,3 +37,4 @@ gameBtn.addEventListener("change",filterCategories)
 foodBtn.addEventListener("change",filterCategories)
 
 liveUpdate();
+categoriesCounter()
