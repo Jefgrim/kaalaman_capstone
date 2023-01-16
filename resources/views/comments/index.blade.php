@@ -75,8 +75,25 @@
             </div>
         </div>
         <div class="replyBtnContainer">
-            <i class="fa-solid fa-reply"></i>
+            <i class="fa-solid fa-reply" type="button" data-bs-toggle="modal" data-bs-target="#replyModal" id="user1" onClick="reply_click()"></i>
         </div>
     </div>
 </div>
+@endsection
+
+@section('replyModal')
+    <div class="modal fade" id="replyModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <script type="text/javascript">
+                    function reply_click(){
+                        console.log(event.srcElement.id);
+                    }
+                </script>
+            </div>
+        </div>
+        </div>
+    </div>
 @endsection
