@@ -2,7 +2,10 @@ import toggleUserSection from "./js/userdropdown.js";
 import Darkmode from "./js/darkmode.js";
 import filterCategories from "./js/filterCategories.js";
 import liveUpdate from "./js/liveupdate.js";
+import sideBar from "./js/sideBar.js";
+import {ExpandPostThread} from "./js/expandBtn.js";
 import categoriesCounter from "./js/categoriesCounter.js"
+
 
 const accordion = document.getElementsByClassName('contentBoxFaq');
 
@@ -36,5 +39,8 @@ healthBtn.addEventListener("change",filterCategories)
 gameBtn.addEventListener("change",filterCategories)
 foodBtn.addEventListener("change",filterCategories)
 
+ExpandPostThread();
+sideBar();
 liveUpdate();
 categoriesCounter()
+

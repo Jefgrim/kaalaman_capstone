@@ -63,7 +63,8 @@
           
           <div class="expandPostThread"> 
             <div class="postThreadContainer" >
-              <form class="postThreadContent">
+              <form class="postThreadContent" action="/thread" method="post">
+                {{ csrf_field() }}
                 <div class="h2Container">
                   <h2 class="thread-post">CREATE A THREAD</h2>
                   <i id="closeBtn" class="fa-regular fa-circle-xmark expandBtn"></i>
@@ -75,9 +76,10 @@
                     placeholder="Title"
                     id="expandedTitleInp"
                     class="titleInp"
+                    name="title"
                     required
                   />
-                  <select id="expandedSelectCategory" class="selectCategory" required>
+                  <select id="expandedSelectCategory" class="selectCategory"  name="category" required>
                     <option value=""selected disabled>Select Category</option>
                     <option value="Technology">Technology</option>
                     <option value="E-commerce">E-Commerce</option>
@@ -87,12 +89,12 @@
                   </select>
                 </div>
                 <div class="threadInpContainer">
-                  <textarea id="expandedThreadInp" class="threadInp" required></textarea>
+                  <textarea id="expandedThreadInp" class="threadInp" name="threadpost" required></textarea>
                 </div>
                 <div class="threadBtnContainer">
                   
                   
-                  <button type="button" id="expandedPostBtn" class="postBtn">Post</button>
+                  <button type="submit" id="expandedPostBtn" class="postBtn">Post</button>
                 </div>
               </form>
             </div>
