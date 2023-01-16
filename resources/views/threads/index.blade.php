@@ -45,8 +45,10 @@
             <a class="Log-in" href="{{ route('login') }}">Log-in</a> 
                
             <a class="Register" href="{{ route('register') }}">Register</a>
-               
-            </div>
+            
+            <i id="expandBtn"></i>
+        </div>
+            
         </form>
     @else
         <form class="postThreadContent" action="/thread" method="post">
@@ -102,4 +104,70 @@
             @endif
         </div>
     </div>
+@endsection
+
+@section('modular')
+@guest
+
+<div class="modular">
+  
+  <div class="expandPostThreadGuest"> 
+    
+     <i id="closeBtn" class="fa-regular fa-circle-xmark expandBtn"></i>
+    <div class="guestSidebarModular">
+     <a class="Log-in" href="{{ route('login') }}">Log-in</a> 
+            
+     <a class="Register" href="{{ route('register') }}">Register</a>
+       
+    
+
+    </div>
+    </div>
+</div>
+          
+            
+
+@else
+<div class="modular">
+          
+    <div class="expandPostThread"> 
+      <div class="postThreadContainer" >
+        <form class="postThreadContent" action="/thread" method="post">
+          {{ csrf_field() }}
+          <div class="h2Container">
+            <h2 class="thread-post">CREATE A THREAD</h2>
+            <i id="closeBtn" class="fa-regular fa-circle-xmark expandBtn"></i>
+          </div>
+
+          <div class="category-title">
+            <input
+              type="text"
+              placeholder="Title"
+              id="expandedTitleInp"
+              class="titleInp"
+              name="title"
+              required
+            />
+            <select id="expandedSelectCategory" class="selectCategory"  name="category" required>
+              <option value=""selected disabled>Select Category</option>
+              <option value="Technology">Technology</option>
+              <option value="E-commerce">E-Commerce</option>
+              <option value="Health-Lifestyle">Health & Lifestyle</option>
+              <option value="Games">Games</option>
+              <option value="Food-Beverages">Food & Beverages</option>
+            </select>
+          </div>
+          <div class="threadInpContainer">
+            <textarea id="expandedThreadInp" class="threadInp" name="threadpost" required></textarea>
+          </div>
+          <div class="threadBtnContainer">
+            
+            
+            <button type="submit" id="expandedPostBtn" class="postBtn">Post</button>
+          </div>
+        </form>
+      </div>
+      </div>
+  </div>
+@endguest
 @endsection

@@ -1,6 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.design')
 
-@section('content')
+@section('fPassword')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">

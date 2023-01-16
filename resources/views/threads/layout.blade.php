@@ -36,7 +36,7 @@
                       <div class="user-Section" id="userSection" style="display: none">
                           <span>{{Auth::user()->name}}</span>
                           <button><a href="{{url('/profile/' . Auth::id())}}" class="userDropDownButton">Account Profile</a></button>
-                          <button> 
+                          
                               <a class="userDropDownButton" href="{{ route('logout') }}"
                                   onclick="event.preventDefault();
                                   document.getElementById('logout-form').submit();">
@@ -45,7 +45,7 @@
                               <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                   @csrf
                               </form>
-                          </button>
+                        
                       </div>
                   </div>
 
@@ -58,48 +58,7 @@
       </header>
       
       <div class="subContainer">
-
-        <div class="modular">
-          
-          <div class="expandPostThread"> 
-            <div class="postThreadContainer" >
-              <form class="postThreadContent" action="/thread" method="post">
-                {{ csrf_field() }}
-                <div class="h2Container">
-                  <h2 class="thread-post">CREATE A THREAD</h2>
-                  <i id="closeBtn" class="fa-regular fa-circle-xmark expandBtn"></i>
-                </div>
-  
-                <div class="category-title">
-                  <input
-                    type="text"
-                    placeholder="Title"
-                    id="expandedTitleInp"
-                    class="titleInp"
-                    name="title"
-                    required
-                  />
-                  <select id="expandedSelectCategory" class="selectCategory"  name="category" required>
-                    <option value=""selected disabled>Select Category</option>
-                    <option value="Technology">Technology</option>
-                    <option value="E-commerce">E-Commerce</option>
-                    <option value="Health-Lifestyle">Health & Lifestyle</option>
-                    <option value="Games">Games</option>
-                    <option value="Food-Beverages">Food & Beverages</option>
-                  </select>
-                </div>
-                <div class="threadInpContainer">
-                  <textarea id="expandedThreadInp" class="threadInp" name="threadpost" required></textarea>
-                </div>
-                <div class="threadBtnContainer">
-                  
-                  
-                  <button type="submit" id="expandedPostBtn" class="postBtn">Post</button>
-                </div>
-              </form>
-            </div>
-            </div>
-        </div>
+@yield('modular')
 
         <div class="sidebar">
           <div class="categoriesContainer">
@@ -155,6 +114,7 @@
               />
               <i class="fa-solid fa-magnifying-glass searchBarLogo"></i>
               <div class="hidePostThreadBtn"><i class="fa-solid fa-pen-to-square"></i></div>
+             
             </div>
           </div>
 

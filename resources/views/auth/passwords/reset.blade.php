@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.design')
 
 @section('fPassword')
 <div class="container">
