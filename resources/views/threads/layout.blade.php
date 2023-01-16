@@ -50,7 +50,10 @@
                   </div>
 
                   <div class="headerIcon">
-                      <i class="fa-regular fa-bell headerIcons" id="notification"></i>
+                    <i class="fa-regular fa-bell headerIcons" id="notification"></i>
+                    
+                    @yield('notificationSection')
+                  
                       <i class="fa-regular fa-lightbulb headerIcons" id="darkmodeBtn"></i>
                   </div>
               </div>
@@ -58,7 +61,7 @@
       </header>
       
       <div class="subContainer">
-@yield('modular')
+        @yield('modular')
 
         <div class="sidebar">
           <div class="categoriesContainer">
@@ -113,7 +116,9 @@
                 name="seacrhInput"
               />
               <i class="fa-solid fa-magnifying-glass searchBarLogo"></i>
-              <div class="hidePostThreadBtn"><i class="fa-solid fa-pen-to-square"></i></div>
+
+
+             @yield('hidePostThreadBtn')
              
             </div>
           </div>

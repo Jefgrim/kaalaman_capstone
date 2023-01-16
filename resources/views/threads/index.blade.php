@@ -30,7 +30,24 @@
                 </div>
             </div>
         </div>
-    @endforeach
+        {{-- <script type="text/javascript">
+        $(document).on('click','.like_button',function(){
+            var content_id = $(this).data('content_id');
+            $(this).attr('disabled', 'disabled');
+            $.ajax({
+                url:"like.php",
+                method:'POST',
+                data:{content_id:content_id},
+                success:function(data){
+                    if(data == 'done')
+                }
+            })
+        })
+        </scipt> --}}
+   
+ @endforeach
+
+   
 @endsection
 
 @section('postThreadContent')
@@ -120,7 +137,7 @@
      <a class="Register" href="{{ route('register') }}">Register</a>
        
     
-
+     <i id="notification"></i>
     </div>
     </div>
 </div>
@@ -169,5 +186,35 @@
       </div>
       </div>
   </div>
+@endguest
+@endsection
+
+@section('notificationSection')
+
+<div class="notificationContainer">
+         <div class="notifContent">
+            <div class="notifPicture"> picture</div>
+            <div class="notifReaction"> Like </div>
+            <div class="notifComment"> comment </div>
+        </div>
+    <div class="notifContent">
+        <div class="notifPicture"> picture</div>
+        <div class="notifReaction"> Like </div>
+        <div class="notifComment"> comment </div>
+    </div>
+            <div class="notifContent">
+                <div class="notifPicture"> picture</div>
+                <div class="notifReaction"> Like </div>
+                <div class="notifComment"> comment </div>
+            </div>
+</div>
+
+@endsection
+
+@section('hidePostThreadBtn')
+@guest
+<div class="hidePostThreadBtn"><i class="fa-solid fa-up-right-and-down-left-from-center"></i></div>
+@else
+<div class="hidePostThreadBtn"><i class="fa-solid fa-pen-to-square"></i></div>
 @endguest
 @endsection
