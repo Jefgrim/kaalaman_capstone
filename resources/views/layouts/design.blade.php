@@ -80,7 +80,7 @@
                 Donate
                 <p class="donation">Your donations will be use for maintaining the website. We truly appreciate your support</p>
                 
-                <img class="gcash" src={{asset("images/gcash-logo-square-180x180.jpg")}}>
+                <img class="gcash" src={{asset("./images/gcash-logo-square-180x180.jpg")}}>
                 
               </div>
                 
