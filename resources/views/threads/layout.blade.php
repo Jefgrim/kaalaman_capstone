@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kaalaman</title>
-    <link rel="stylesheet" href={{asset('css/app.css')}}>
-    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
+    <link rel="stylesheet" href={{asset('./css/app.css')}}>
+    <link rel="shortcut icon" href="{{ asset('./favicon.ico') }}">
     <script src="https://js.pusher.com/7.2/pusher.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     
@@ -16,7 +16,7 @@
     <div class="mainContainer">
      
       <header> 
-       <a href="/"><img src={{asset("images/kaalaman-logo.png")}} class="logo" alt="" /></a>
+       <a href="/"><img src={{asset("./images/kaalaman-logo.png")}} class="logo" alt="" /></a>
         @guest
               <div class="user">
                   <div class="userDropDown headerIcons">
@@ -166,7 +166,7 @@
                 Donate
                 <p class="donation">Your donations will be use for maintaining the website. We truly appreciate your support</p>
                 
-                <img class="gcash" src={{asset("images/gcash-logo-square-180x180.jpg")}}>
+                <img class="gcash" src={{asset("./images/gcash-logo-square-180x180.jpg")}}>
                 
               </div>
                 
@@ -199,7 +199,7 @@
                 Creators
                 <div class="creatorDetailsContainer">
                   <div>
-                    <img class="pic-creator" src={{asset("images/5.png")}}>
+                    <img class="pic-creator" src={{asset("./images/AvatarUsers2_49.png")}}>
                   </div>
                   <div class="creatorDetailsNameContainer">
                     <span class="name">Nicky Esteban</span>
@@ -208,7 +208,7 @@
                 
                 <div class="creatorDetailsContainer">
                   <div>
-                    <img class="pic-creator" src={{asset('images/3.png')}}> 
+                    <img class="pic-creator" src={{asset('./images/AvatarUsers2_38.png')}}> 
                   </div>
                   <div class="creatorDetailsNameContainer">
                     <span class="name">Jefgrim Alvar</span>
@@ -216,7 +216,7 @@
                 </div> 
                 <div class="creatorDetailsContainer">   
                   <div>
-                    <img class="pic-creator" src={{asset("images/6.png")}}>
+                    <img class="pic-creator" src={{asset("./images/AvatarUsers2_36.png")}}>
                   </div>
                   <div class="creatorDetailsNameContainer">
                     <span class="name">Jomarie Cailing</span>
