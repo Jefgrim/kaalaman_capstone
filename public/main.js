@@ -39,8 +39,7 @@ healthBtn.addEventListener("change",filterCategories)
 gameBtn.addEventListener("change",filterCategories)
 foodBtn.addEventListener("change",filterCategories)
 
-ExpandPostThread();
-sideBar();
 liveUpdate();
 categoriesCounter()
-
+ExpandPostThread();
+sideBar();

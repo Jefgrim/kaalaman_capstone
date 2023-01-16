@@ -32,7 +32,7 @@
           @else
               <div class="user">
                   <div class="userDropDown headerIcons">
-                      <img src={{asset("images/AvatarUsers2_20.png")}} />
+                      <img src={{asset("./images/AvatarUsers2_20.png")}} />
                       <div class="user-Section" id="userSection" style="display: none">
                           <span>{{Auth::user()->name}}</span>
                           <button><a href="{{url('/profile/' . Auth::id())}}" class="userDropDownButton">Account Profile</a></button>
@@ -230,7 +230,7 @@
         </script> 
 
     <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
-    <script type="module" src={{asset("main.js")}}></script>
+    <script type="module" src={{asset("./main.js")}}></script>
     
     
     <script
