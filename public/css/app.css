@@ -993,6 +993,13 @@ a {
   color: black;
 }
 
+.vision {
+    margin-top: 20px;
+}
+
+.mission {
+    margin-top: 20px;
+}
 @media screen and (max-width: 1024px) {
     .sidebar,
     .rightContainer {

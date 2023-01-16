@@ -53,7 +53,7 @@
 @section('contact-us')
 <div class="centerContainer">
   <div class="centerContent">
-    <a class="footerLinks mb-10" href="/"><i class="fa-solid fa-house" ></i></a>
+    <a class="footerLinks mb-50" href="/"><i class="fa-solid fa-house" ></i></a>
 
     <div class="mb-3">
       <label for="exampleFormControlInput1" class="form-label">Email address</label>

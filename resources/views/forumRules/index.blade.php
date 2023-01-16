@@ -42,8 +42,7 @@ The following rules apply everywhere on the site, unless explicitly mentioned ot
 <p class="forumrules">
 9. No Inappropriate Link. Posting links primarily for promotion, advertisement, or with excessive ads is not allowed. When sharing information or file, post the actual details and not a link that redirects to another site or source. Messages with torrent, free streaming site (except live streams), referral or affiliate link, and link to other site with similar service to this site are not allowed. </p>
 
-<p class="forumrules">
-10. No Unnecessary PM. This site is a public discussion forum so everything should be discussed and shared in the threads. Do not require members to contact you or ask for their contact details just to give the rest of the information you posted unless it contains sensitive details demanding utmost privacy. </p>
+
 
 <p class="forumrules">
 Members are responsible for reviewing the Forum Rules. This site reserves the right to modify these rules at any time. Your continued use of the site constitutes your consent to such changes. Depending on the severity and frequency of the violation, member may receive warning or suspension of account.</p>
