@@ -1,5 +1,9 @@
 @extends('layouts.design')
 
+@section('title')
+    Forum Rules
+@endsection
+
 @section('forum-rules')
 <div class="centerContainer">
   <div class="centerContent">

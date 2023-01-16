@@ -970,6 +970,29 @@ a {
     color: #f3efe0;
 }
 
+.categoryContainer span {
+  color: #008968;
+}
+
+.profileContiner{
+  background-color: white;
+  height: 100%;
+  width: 80%;
+  display: flex;
+}
+
+.profilePicture{
+  background-color: aqua;
+  height: 100%;
+  width: 50%;
+}
+
+.profileInformation{
+  height: 100%;
+  width: 50%;
+  color: black;
+}
+
 @media screen and (max-width: 1024px) {
     .sidebar,
     .rightContainer {
