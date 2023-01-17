@@ -12,7 +12,7 @@ class Comment extends Model
 
     protected $table = 'comment';
     protected $primaryKey = 'id';
-    protected $fillable = ['userId', 'commentId', 'threadId', 'comment'];
+    protected $fillable = ['userId', 'threadId', 'replyTo', 'comment', 'replyToId'];
 
     public function threadcomment(){
         return $this->belongsTo("App\Models\Thread", "threadId");

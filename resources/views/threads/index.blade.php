@@ -26,7 +26,7 @@
                     </div>
                 </div>
                 <div class="replyBtnContainer">
-                    <a href='{{url('/thread/' . $item->id)}}'><i class="fa-solid fa-comment-dots"></i></a>
+                    <a href='{{url('/thread/comments/' . $item->id)}}'><i class="fa-solid fa-comment-dots"></i></a>
                 </div>
             </div>
         </div>
@@ -95,7 +95,7 @@
             </select>
             </div>
             <div class="threadInpContainer">
-            <textarea id="threadInp" class="threadInp" name="threadpost" required></textarea>
+            <textarea id="threadInp" class="threadInp" name="threadpost" required maxlength="255"></textarea>
             </div>
             <div class="threadBtnContainer">
             
@@ -175,7 +175,7 @@
             </select>
           </div>
           <div class="threadInpContainer">
-            <textarea id="expandedThreadInp" class="threadInp" name="threadpost" required></textarea>
+            <textarea id="expandedThreadInp" class="threadInp" name="threadpost" required maxlength="255"></textarea>
           </div>
           <div class="threadBtnContainer">
             

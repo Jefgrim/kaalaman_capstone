@@ -17,6 +17,8 @@ return new class extends Migration
             $table->id();
             $table->foreignId("userId")->nullable()->constrained('users');
             $table->foreignId("threadId")->nullable()->constrained('thread');
+            $table->string("replyTo")->nullable();
+            $table->string("replyToId")->nullable();
             $table->string("comment");
             $table->timestamps();
         });

@@ -74,14 +74,7 @@ class ThreadController extends Controller
      */
     public function show($id)
     {
-        $thread = Thread::with("users")->find($id);
-        $comments = Comment::with('threadcomment')->with('userscomment')->get();
-        $users = User::get();
-        // return $thread;
-        if ($thread == null){
-            return redirect("/404");
-        }
-        return view('comments.index')->with('thread' , $thread)->with('comments', $comments)->with('users', $users);
+        return redirect('/');
     }
 
     /**

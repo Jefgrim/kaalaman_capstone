@@ -144,6 +144,18 @@
       </div>
       @yield('replyModal')
     </div>
+    <script type="text/javascript">
+      function replyClick(){
+          $replyToName = event.srcElement.id;
+          $replyToId = event.srcElement.parentNode.id
+          modalReplyToId = document.querySelector(`#modalReplyToId`);
+          modalReplyToId.value = $replyToId
+          modalReplyTo = document.querySelector(`#modalReplyTo`);
+          modalReplyTo.value = $replyToName
+          txt = document.querySelector("#modalReplyToTxt");
+          txt.textContent = `Replying To ${$replyToName}`;
+      }
+  </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <script type="module" src={{asset("./main.js")}}></script>
     <script
