@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ThreadController;
 use App\Http\Controllers\UserProfileController;
+use App\Http\Controllers\CommentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -70,6 +71,7 @@ Route::get("/", [ThreadController::class, 'index']);
 // ]);
 
 Route::resource("/thread", ThreadController::class);
+Route::resource("/thread/comments", CommentController::class);
 Route::resource("/profile", UserProfileController::class);
 
 Auth::routes();
