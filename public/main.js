@@ -1,4 +1,4 @@
-import toggleUserSection from "./js/userdropdown.js";
+import {toggleUserSection ,notificationSection}from "./js/userdropdown.js";
 import Darkmode from "./js/darkmode.js";
 import filterCategories from "./js/filterCategories.js";
 import liveUpdate from "./js/liveupdate.js";
@@ -18,9 +18,10 @@ for (let i = 0; i<accordion.length; i++ ){
 }
 //dropdown user
 let userdropdown =document.querySelector(".userDropDown")
-
+let notification =document.querySelector("#notification")
 // //event listener dropdown user
 userdropdown.addEventListener("click",toggleUserSection)
+notification.addEventListener('click',notificationSection)
 //button
 let darkModeBtn = document.querySelector("#darkmodeBtn");
 //eventlistener

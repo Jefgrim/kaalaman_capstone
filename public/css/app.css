@@ -78,6 +78,31 @@ header {
     flex-direction: column;
     color: var(--third-color);
 }
+
+.notificationContainer{
+    width: 400px;
+    background-color: var(--primary-color);
+    position: absolute;
+    z-index: 1;
+    margin-top: 80px;
+    margin-right: 300px;
+    flex-direction: column;
+    color: var(--third-color);
+    height: 500px;
+    display: none;
+    align-items: center;
+}
+.notifContent{
+    background-color: #008968;
+    display: flex;
+    padding: 10px;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 80%;
+    margin: 20px;
+}
+
+
 .guestUser-Section {
     width: 150px;
     background-color: var(--primary-color);
