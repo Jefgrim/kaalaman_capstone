@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Thread; //add contact model, since model gets the data from the database
+use App\Models\Comment; //add contact model, since model gets the data from the database
+use App\Models\User; //add contact model, since model gets the data from the database
 use Illuminate\Support\Facades\Auth;
 use App\Events\newThreadPost;
 use DB;
@@ -73,12 +75,13 @@ class ThreadController extends Controller
     public function show($id)
     {
         $thread = Thread::with("users")->find($id);
-        
+        $comments = Comment::with('threadcomment')->with('userscomment')->get();
+        $users = User::get();
         // return $thread;
         if ($thread == null){
             return redirect("/404");
         }
-        return view('comments.index')->with('thread' , $thread);
+        return view('comments.index')->with('thread' , $thread)->with('comments', $comments)->with('users', $users);
     }
 
     /**

@@ -68,6 +68,7 @@
             @yield('vision')
             @yield('mission')
             @yield('contact-us')
+            @yield('threadContent')
             @yield('commentContent')
             @yield('login')
             @yield('fPassword')
