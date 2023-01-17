@@ -45,7 +45,7 @@
     @endguest
 @endsection
 
-@section('commentContent')
+@section('threadContent')
 <div class="threadNavContainer">
     <div class="backButtonContainer">
         <a href="/thread"><i class="fa-solid fa-circle-left"></i></a>
@@ -87,13 +87,58 @@
         <div class="modal-content">
             <div class="modal-body">
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                <script type="text/javascript">
+                <h3>Replying To Test</h3>
+                <form action=""></form>
+                {{-- <script type="text/javascript">
                     function reply_click(){
                         console.log(event.srcElement.id);
                     }
-                </script>
+                </script> --}}
             </div>
         </div>
         </div>
     </div>
+@endsection
+
+@section('commentContent')
+@foreach ($comments as $comment)
+    @if ($comment->threadId == $thread->id)
+<div class="replyContent">
+    <div class="avatarTextsContainer">
+        <div class="replyUserAvatar">
+            <img src=".//images/Avatar Users2_29.png">
+            <span>{{$comment->userscomment->name}}</span>
+        </div>
+        <div class="replyTexts">
+            <div class="repliedTo">
+                <span>
+                    @foreach ($users as $user)
+                        @if ( $thread->userId == $user->id)
+                            {{$user->name}} said:
+                        @endif
+                    @endforeach
+                </span>
+                <span>{{$comment->threadcomment->threadpost}}</span>
+            </div>
+            <div class="reply">
+                <span>{{$comment->comment}}</span>
+            </div>
+        </div>
+    </div>
+    <div class="replyReaction">
+        <div class="thumbsUpDownContainer">
+            <div class="replyThumbsUp">
+                <i class="fa-regular fa-thumbs-up" id="likereply9"></i>
+            </div>
+            <div class="replyThumbsUp">
+                <i class="fa-regular fa-thumbs-down" id="dislikereply9"></i>
+            </div>
+        </div>
+            <div class="replyBtnContainer post5Batch" id="reply9">
+                <i class="fa-solid fa-reply"></i>
+            </div>
+    </div>
+</div>
+@endif
+@endforeach
 @endsection

@@ -1,6 +1,7 @@
 @extends('threads.layout')
 
 @section('threadContent')
+{{$threads}}
     @foreach ($threads as $item)
         <div class="threadContent {{$item->category}}">
             <div class="avatarTextsContainer">
