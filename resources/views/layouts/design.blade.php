@@ -67,6 +67,7 @@
             @yield('userProfile')
             @yield('vision')
             @yield('mission')
+            @yield('about')
             @yield('contact-us')
             @yield('commentContent')
             @yield('login')
@@ -76,18 +77,60 @@
           </div>
 
           <div class="creatorContainer">
-              <div class="donate">
-                Donate
+            <footer>  
+                <div class="footer-container">
+                  <div class="footer-row">
+                      {{-- <div class="footer-col">
+                          <p>Your donations will be use for maintaining Kaalaman.<br> We truly appreciate yor support.</p>
+                          <img class="gcash" src={{asset("./images/gcash-logo-square-180x180.jpg")}}>
+                      </div> --}}
+                         
+                      <div class="footer-col">         
+                                <ul class="footer-links">
+                                <li><a href="">FAQs</a></li>
+                                <li><a href="">Forum Rules</a></li>
+                                <li><a href="">Privacy Policy</a></li>
+                                <li><a href="">Terms and Conditions</a></li>
+                              </ul>
+                      </div>       
+                      
+
+                      <!-- 2nd Column -->
+
+                      <div class="footer-col">
+                        
+                        <ul class="footer-links">
+                            <li><a href="">About Us</a></li>
+                            <li><a href="">Vision</a></li>
+                            <li><a href="">Mission</a></li>
+                            <li><a href="">Contact Us</a></li>
+                        </ul>
+                      </div>
+
+                      <div class="footer-col">  
+                        <h6 class="newsletter">Newsletter</h6>
+                        <input type="text" placeholder="Your Name" class="inputname">
+                        <input type="email" placeholder="Enter Email" class="inputemail">
+                        <input type="submit" placeholder="Submit" class="inputsubmit">
+                      </div>
+                  </div>  
+              </div> 
+            </footer> 
+            
+            
+            {{-- <div class="donate">
+                {{-- Donate
                 <p class="donation">Your donations will be use for maintaining the website. We truly appreciate your support</p>
                 
                 <img class="gcash" src={{asset("./images/gcash-logo-square-180x180.jpg")}}>
                 
-              </div>
+              </div> --}}
                 
 
-              <div class="links">
+              {{-- <div class="links">
              
                 <div>Links
+                  <p class="links-2"><a class="footerLinks" href="/about">About</a></p>
                   <p class="links-2"><a class="footerLinks" href="/faq">FAQs</a></p>
                   <p class="links-2"><a  class="footerLinks" href="/rules">Forum Rules</a></p>
                   <p class="links-2"><a class="footerLinks" href="/privacy-policy">Privacy Policy</a></p>
@@ -101,11 +144,11 @@
                   
 
                   </div>
-              </div>
+              </div> --}} 
               
 
-              <div class="about">
-                About
+              {{-- <div class="about" >
+                <a href="/about" class="footerLinks">About</a>
               
               <p class="about-kaalaman">Kaalaman is an online forum community where people can get to share their knowledge and experiences regarding a certain topic. </p>
               </div>
@@ -136,7 +179,7 @@
                   <div class="creatorDetailsNameContainer">
                     <span class="name">Jomarie Cailing</span>
                   </div>
-                </div> 
+                </div>  --}}
             </div>
           </div>
         </div>
