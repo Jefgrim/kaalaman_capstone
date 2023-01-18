@@ -1091,24 +1091,14 @@ input[type=file]::-webkit-file-upload-button {
     cursor: pointer;
 }
 
-.input-field {
-padding: 6px 12px;
-border-radius: 8px;
-}
-
-.Dob {
-margin: 0 0 8px; 
-}
-
-.select-gender {
-padding: 6px 12px;
-border-radius: 8px;
-margin-top: 20px;
+.user-profile {
+    text-align: center;
 }
 
 .btnmodal {
     width: 30%;
     margin-top: 30px;
+    align-self: center;
 }
 
 .about-us {
