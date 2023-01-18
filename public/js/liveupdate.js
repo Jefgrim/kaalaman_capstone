@@ -4,10 +4,16 @@ let liveUpdate = () => {
       });
      
       var channel = pusher.subscribe('threadpost-channel');
-      channel.bind('newThreadPost', function() {
+      channel.bind('newThreadPost', function(data) {
         let toast = document.querySelector(".toast")
         let myToast = new bootstrap.Toast(toast);
         myToast.show()
+
+        let latestTitle = document.querySelector('.latestTitle');
+         latestTitle.textContent = data.newThread.title;
+     
+         let latestUsername = document.querySelector('.p-1');
+         latestUsername.textContent = `By: ${data.newThread.username}`;
       });
     }
 
