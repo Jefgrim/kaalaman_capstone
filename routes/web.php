@@ -51,6 +51,10 @@ Route::get('/mission',function (){
     return view('mission.index');
 });
 
+Route::get('/about',function (){
+    return view('about.index');
+});
+
 
 Route::get('/contactUs',function (){
     return view('Contact Us.index');
