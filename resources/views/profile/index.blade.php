@@ -1,10 +1,13 @@
 @extends('layouts.design')
 
 @section('title')
-    {{$userProfile->name}}
+    {{$userProfile->name}}  {{--name came from the database  --}}
+    
+    
 @endsection
 
 @section('userProfile')
+
     <h2>Profile of {{$userProfile->name}}</h2>
 
     <div class="profile-Container">
@@ -26,31 +29,32 @@
                 
             </div>
 
-            <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">Name</label>
-                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="enter your name">
+            <div class="mb-3 text-light user-profile">
+                <h4>{{$userProfile->name}}</h4>
+              </div>
+              
+              @if ($userProfile->id == Auth::id())
+                <div class="mb-3 text-light user-profile">
+                    <h4>{{$userProfile->email}}</h4>
+                </div>
+              @endif
+              
+
+          
+
+              <div class="mb-3 text-light user-profile">
+                <h4>{{$userProfile->dob}}</h4>
               </div>
 
-              <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-              </div>
+             <div class="mb-3 text-light user-profile">
+              <h4>{{$userProfile->gender}}</h4>
+             </div>
 
-              <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">Date of Birth</label>
-                <input type="date" class="form-control" id="exampleFormControlInput1">
-              </div>
+             @if ($userProfile->id == Auth::id())
+             <button type="button" class="btn btn-primary btnmodal" data-bs-toggle="modal" data-bs-target="#exampleModal"data-bs-whatever="@mdo">Edit Profile</button>
 
-              <label>Gender</label>
-              <select class="form-select" aria-label="Default select example">
-                <option disabled selected>select gender</option>
-                <option value="1">Male</option>
-                <option value="2">Female</option>
-                <option value="3">Other</option>
-              </select>
-
-              <button type="button" class="btn btn-primary btnmodal" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Edit Profile</button>
-
+              @endif 
+             
               <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                   <div class="modal-content">
