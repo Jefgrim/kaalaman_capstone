@@ -8,12 +8,12 @@
     <link rel="shortcut icon" href="{{ asset('./favicon.ico') }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" 
     integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://js.pusher.com/7.2/pusher.min.js"></script>
     <link rel="stylesheet" href={{asset('./css/app.css')}}>
   </head>
 
   <body>
     <div class="mainContainer">
-     
       <header>
         <a href="/"><img src={{asset("./images/kaalaman-logo.png")}} class="logo" alt="" /></a>
         @guest
@@ -199,7 +199,11 @@
           txt.textContent = `Replying To ${$replyToName}`;
       }
   </script>
+  
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    @if (request()->is('thread/comments/*'))
+      <script type="module" src={{asset("./js/newCommentToast.js")}}></script>
+    @endif
     <script type="module" src={{asset("./main.js")}}></script>
     <script
       src="https://kit.fontawesome.com/26177573c7.js"

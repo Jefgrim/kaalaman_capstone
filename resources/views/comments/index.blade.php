@@ -51,6 +51,15 @@
         <a href="/thread"><i class="fa-solid fa-circle-left"></i></a>
     </div>
 </div>
+<div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="false">
+    <div class="toast-body">
+      A New Comment is posted, click reload page to see the latest thread.
+      <div class="mt-2 pt-2 border-top">
+        <button type="button" class="btn btn-primary btn-sm" onclick="window.location.reload()">Reload Page</button>
+        <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="toast">Close</button>
+      </div>
+    </div>
+  </div>
 <div class="threadContent {{$thread->category}}">
     <div class="avatarTextsContainer">
         <div class="threadUserAvatar">
@@ -66,17 +75,21 @@
         </div>
     </div>
     <div class="threadReaction">
-        <div class="thumbsUpDownContainer">
-            <div class="threadThumbsUp">
-                <i class="fa-regular fa-thumbs-up" id="likepost5"></i>
+        @guest
+            
+        @else
+            <div class="thumbsUpDownContainer">
+                <div class="threadThumbsUp">
+                    <i class="fa-regular fa-thumbs-up" id="likepost5"></i>
+                </div>
+                <div class="threadThumbsDown">
+                    <i class="fa-regular fa-thumbs-down" id="dislikepost5"></i>
+                </div>
             </div>
-            <div class="threadThumbsDown">
-                <i class="fa-regular fa-thumbs-down" id="dislikepost5"></i>
+            <div class="replyBtnContainer">
+                <i class="fa-solid fa-reply" type="button" data-bs-toggle="modal" data-bs-target="#replyModal" id="{{$thread->users->name}}" onclick="replyClick()"></i>
             </div>
-        </div>
-        <div class="replyBtnContainer">
-            <i class="fa-solid fa-reply" type="button" data-bs-toggle="modal" data-bs-target="#replyModal" id="{{$thread->users->name}}" onclick="replyClick()"></i>
-        </div>
+        @endguest
     </div>
 </div>
 @endsection
@@ -129,17 +142,21 @@
                             </div>
                         </div>
                         <div class="replyReaction">
-                            <div class="thumbsUpDownContainer">
-                                <div class="replyThumbsUp">
-                                    <i class="fa-regular fa-thumbs-up" id="likereply9"></i>
+                            @guest
+                            
+                            @else
+                                <div class="thumbsUpDownContainer">
+                                    <div class="replyThumbsUp">
+                                        <i class="fa-regular fa-thumbs-up" id="likereply9"></i>
+                                    </div>
+                                    <div class="replyThumbsUp">
+                                        <i class="fa-regular fa-thumbs-down" id="dislikereply9"></i>
+                                    </div>
                                 </div>
-                                <div class="replyThumbsUp">
-                                    <i class="fa-regular fa-thumbs-down" id="dislikereply9"></i>
-                                </div>
-                            </div>
                                 <div class="replyBtnContainer post5Batch" id="{{$comment->id}}">
                                     <i class="fa-solid fa-reply" type="button" data-bs-toggle="modal" data-bs-target="#replyModal" id="{{$comment->userscomment->name}}" onclick="replyClick()"></i>
                                 </div>
+                            @endguest
                         </div>
                     </div>
             @endif

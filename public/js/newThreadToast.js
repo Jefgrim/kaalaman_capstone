@@ -1,7 +1,6 @@
-let liveUpdate = () => {
-    var pusher = new Pusher('56af78128c04dde0a0f2', {
-        cluster: 'ap1'
-      });
+var pusher = new Pusher('56af78128c04dde0a0f2', {
+      cluster: 'ap1'
+     });
      
       var channel = pusher.subscribe('threadpost-channel');
       channel.bind('newThreadPost', function(data) {
@@ -15,6 +14,5 @@ let liveUpdate = () => {
          let latestUsername = document.querySelector('.p-1');
          latestUsername.textContent = `By: ${data.newThread.username}`;
       });
-    }
+    
 
-export default liveUpdate;
