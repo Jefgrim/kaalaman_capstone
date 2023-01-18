@@ -51,7 +51,7 @@
         <a href="/thread"><i class="fa-solid fa-circle-left"></i></a>
     </div>
 </div>
-<div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="false">
+<div class="toast sticky-top" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="false">
     <div class="toast-body">
       A New Comment is posted, click reload page to see the latest thread.
       <div class="mt-2 pt-2 border-top">
