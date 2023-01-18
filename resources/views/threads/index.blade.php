@@ -17,34 +17,23 @@
                 </div>
             </div>
             <div class="threadReaction">
-                <div class="thumbsUpDownContainer">
-                    <div class="threadThumbsUp">
-                        <i class="fa-regular fa-thumbs-up" id="likepost5"></i>
+                @guest
+                
+                @else
+                    <div class="thumbsUpDownContainer">
+                        <div class="threadThumbsUp">
+                            <i class="fa-regular fa-thumbs-up" id="likepost5"></i>
+                        </div>
+                        <div class="threadThumbsDown">
+                            <i class="fa-regular fa-thumbs-down" id="dislikepost5"></i>
+                        </div>
                     </div>
-                    <div class="threadThumbsDown">
-                        <i class="fa-regular fa-thumbs-down" id="dislikepost5"></i>
-                    </div>
-                </div>
+                @endguest
                 <div class="replyBtnContainer">
                     <a href='{{url('/thread/comments/' . $item->id)}}'><i class="fa-solid fa-comment-dots"></i></a>
                 </div>
             </div>
         </div>
-        {{-- <script type="text/javascript">
-        $(document).on('click','.like_button',function(){
-            var content_id = $(this).data('content_id');
-            $(this).attr('disabled', 'disabled');
-            $.ajax({
-                url:"like.php",
-                method:'POST',
-                data:{content_id:content_id},
-                success:function(data){
-                    if(data == 'done')
-                }
-            })
-        })
-        </scipt> --}}
-   
  @endforeach
 
    

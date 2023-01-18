@@ -8,6 +8,7 @@ use App\Models\Thread; //add contact model, since model gets the data from the d
 use App\Models\Comment; //add contact model, since model gets the data from the database
 use App\Models\User; //add contact model, since model gets the data from the database
 use Illuminate\Support\Facades\Auth;
+use App\Events\newReplyPost;
 use DB;
 
 class CommentController extends Controller
@@ -47,7 +48,7 @@ class CommentController extends Controller
         $comment->replyToId = $request->replyToId;
         $comment->comment = $request->comment;
         $comment->save();
-
+        event(new newReplyPost("newReply"));
         return redirect('/thread/comments/' . $request->threadId);
     }
 
