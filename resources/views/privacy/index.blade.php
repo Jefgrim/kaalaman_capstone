@@ -9,7 +9,7 @@
 <div class="centerContainer"> 
   
   <div class="centerContent">
-    <a class="footerLinks" href="/"><i class="fa-solid fa-house"></i></a>
+    <a class="footerLinks" href="/"></a>
   <h1>Privacy Policy</h1>
 <p>Last updated: January 11, 2023</p>
 <p>This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You.</p>

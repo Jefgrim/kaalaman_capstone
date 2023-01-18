@@ -1012,7 +1012,7 @@ header {
 }
 
 .forumrules {
-    font-size: 24px;
+    font-size: 18px;
 }
 
 a {
@@ -1134,6 +1134,7 @@ margin-top: 20px;
 .footer-col ul {
     list-style: none;
     margin: 0;
+    font-size: 12px;
     
 }
 
@@ -1307,6 +1308,15 @@ margin-top: 20px;
     }
 }
 
+@media screen and (max-width: 690px) {
+    .footer-row {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+
+
 @media screen and (max-width: 425px) {
     .modular {
         width: 100%;
@@ -1452,3 +1462,4 @@ margin-top: 20px;
         height: 15px;
     }
 }
+
