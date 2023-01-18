@@ -131,52 +131,47 @@
 
           <div class="creatorContainer">
            
-            <footer>  
-              <div class="footer-container">
-                <div class="footer-row">
-                    {{-- <div class="footer-col">
-                        <p>Your donations will be use for maintaining Kaalaman.<br> We truly appreciate yor support.</p>
-                        <img class="gcash" src={{asset("./images/gcash-logo-square-180x180.jpg")}}>
-                    </div> --}}
-                       
-                    <div class="footer-col">         
-                              <ul class="footer-links">
-                              <li><a href="">FAQs</a></li>
-                              <li><a href="">Forum Rules</a></li>
-                              <li><a href="">Privacy Policy</a></li>
-                              <li><a href="">Terms and Conditions</a></li>
-                            </ul>
-                    </div>       
-                    
-
-                    <!-- 2nd Column -->
-
-                    <div class="footer-col">
+              <footer>  
+                <div class="footer-container">
+                  <div class="footer-row">
+                      {{-- <div class="footer-col">
+                          <p>Your donations will be use for maintaining Kaalaman.<br> We truly appreciate yor support.</p>
+                          <img class="gcash" src={{asset("./images/gcash-logo-square-180x180.jpg")}}>
+                      </div> --}}
+                        
+                      <div class="footer-col">         
+                                <ul class="footer-links">
+                                <li><a href="">FAQs</a></li>
+                                <li><a href="">Forum Rules</a></li>
+                                <li><a href="">Privacy Policy</a></li>
+                                <li><a href="">Terms and Conditions</a></li>
+                              </ul>
+                      </div>       
                       
-                      <ul class="footer-links">
-                          <li><a href="">About Us</a></li>
-                          <li><a href="">Vision</a></li>
-                          <li><a href="">Mission</a></li>
-                          <li><a href="">Contact Us</a></li>
-                      </ul>
-                    </div>
 
-                    <div class="footer-col">  
-                      <h6 class="newsletter">Newsletter</h6>
-                      <input type="text" placeholder="Your Name" class="inputname">
-                      <input type="email" placeholder="Enter Email" class="inputemail">
-                      <input type="submit" placeholder="Submit" class="inputsubmit">
-                    </div>
-                </div>  
-            </div> 
-          </footer> 
+                      <!-- 2nd Column -->
 
-          </div>
-              
-              
+                      <div class="footer-col">
+                        
+                        <ul class="footer-links">
+                            <li><a href="">About Us</a></li>
+                            <li><a href="">Vision</a></li>
+                            <li><a href="">Mission</a></li>
+                            <li><a href="">Contact Us</a></li>
+                        </ul>
+                      </div>
+
+                      <div class="footer-col">  
+                        <h6 class="newsletter">Newsletter</h6>
+                        <input type="text" placeholder="Your Name" class="inputname">
+                        <input type="email" placeholder="Enter Email" class="inputemail">
+                        <input type="submit" placeholder="Submit" class="inputsubmit">
+                      </div>
+                  </div>  
+              </div> 
+            </footer> 
           </div>
         </div>
-
         <div class="rightContainer">
           <div class="postThreadContainer" >
             @yield('postThreadContent')
