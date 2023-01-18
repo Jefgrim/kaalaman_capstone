@@ -4,8 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\likethread;
+use App\Models\Thread;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
-class LikeController extends Controller
+class likethreadController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -35,7 +39,8 @@ class LikeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       
+   
     }
 
     /**
@@ -46,7 +51,7 @@ class LikeController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**
@@ -69,7 +74,7 @@ class LikeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
     }
 
     /**
@@ -81,5 +86,31 @@ class LikeController extends Controller
     public function destroy($id)
     {
         //
+    }
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function likeThread(Request $request)
+    {
+        $likeThread= new likeThread;
+        $likeThread->userId = Auth::id(); 
+        $likeThread->threadId = $request->threadId;
+        $likeThread->save();
+
+        // $data = $request->validate([
+        //     'userId' => 'required',
+        //     'threadId' => 'required',
+          
+        // ]);
+
+        // $project = User::create($data);
+
+        // return response()->json(['success'=>'Laravel ajax example is being processed.']);
+
+      
+        
     }
 }
