@@ -140,33 +140,38 @@
                       </div> --}}
                         
                       <div class="footer-col">         
-                                <ul class="footer-links">
-                                <li><a href="">FAQs</a></li>
-                                <li><a href="">Forum Rules</a></li>
-                                <li><a href="">Privacy Policy</a></li>
-                                <li><a href="">Terms and Conditions</a></li>
-                              </ul>
-                      </div>       
-                      
-
-                      <!-- 2nd Column -->
-
-                      <div class="footer-col">
-                        
                         <ul class="footer-links">
-                            <li><a href="">About Us</a></li>
-                            <li><a href="">Vision</a></li>
-                            <li><a href="">Mission</a></li>
-                            <li><a href="">Contact Us</a></li>
-                        </ul>
-                      </div>
+                        <li><a href="/faq">FAQs</a></li>
+                        <li><a href="/rules">Forum Rules</a></li>
+              </div>          
+              <div class="footer-col">         
+                        <ul class="footer-links">
+                        <li><a href="/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="/terms-condition">Terms and Conditions</a></li>
+                      </ul>
+              </div>       
+              
 
-                      <div class="footer-col">  
+              <!-- 2nd Column -->
+
+              <div class="footer-col">
+                <ul class="footer-links">
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/about">Vision</a></li>
+              </div>
+              <div class="footer-col">         
+                <ul class="footer-links">    
+                    <li><a href="/about">Mission</a></li>
+                    <li><a href="/about">Contact Us</a></li>
+                </ul>
+              </div>
+
+                      {{-- <div class="footer-col">  
                         <h6 class="newsletter">Newsletter</h6>
                         <input type="text" placeholder="Your Name" class="inputname">
                         <input type="email" placeholder="Enter Email" class="inputemail">
                         <input type="submit" placeholder="Submit" class="inputsubmit">
-                      </div>
+                      </div> --}}
                   </div>  
               </div> 
             </footer> 
