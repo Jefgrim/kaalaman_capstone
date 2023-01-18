@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="{{ asset('./favicon.ico') }}">
     <script src="https://js.pusher.com/7.2/pusher.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    
+    <meta name="csrf-token" content="{{ csrf_token() }}">
   </head>
 
   <body>
@@ -197,6 +197,7 @@
       $('#seacrhInput').on('keyup',function() {
      
        $value=$(this).val();
+      
         $.ajax({
           type:'get',
           url:'{{URL::to('/')}}',
@@ -215,6 +216,28 @@
        <script type="text/javascript">
        $.ajaxSetup({ headers: { 'csrftoken' : '{{ csrf_token() }}' } });
         </script> 
+
+{{-- <script type="text/javascript"> 
+
+let Parent = document.querySelector('.threadContentContainer').children;
+let i = 0;
+let x= 1;
+
+while(i < Parent.length){
+  
+  var form = document.getElementById(`likeThreadId${x}`)
+  form.addEventListener("sumbit",handleForm)
+  i++
+  x++
+}
+
+function handleForm(event){
+  event.preventDefault();
+  alert("hello")
+
+}
+
+</script> --}}
 
     <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>

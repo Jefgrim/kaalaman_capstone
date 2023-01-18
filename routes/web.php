@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ThreadController;
 use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\likethreadController;
 
 /*
 |--------------------------------------------------------------------------
@@ -77,9 +78,10 @@ Route::get("/", [ThreadController::class, 'index']);
 Route::resource("/thread", ThreadController::class);
 Route::resource("/thread/comments", CommentController::class);
 Route::resource("/profile", UserProfileController::class);
-
+Route::resource("/like", likethreadController::class);
 Auth::routes();
 
 
  
  Route::get('/', [ThreadController::class, 'searchThread']);
+ Route::post('/', [likethreadController::class, 'likeThread']);
