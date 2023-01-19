@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\likethread;
 use App\Models\Thread; //add contact model, since model gets the data from the database
 use App\Models\Comment; //add contact model, since model gets the data from the database
 use App\Models\User; //add contact model, since model gets the data from the database
