@@ -125,9 +125,15 @@
             <textarea id="threadInp" class="threadInp" name="threadpost" required maxlength="255"></textarea>
             </div>
             <div class="threadBtnContainer">
+                <div class="expandbutton">
+                    <i id="expandBtn" class="fa-solid fa-plus enlargebtn expandBtn"></i>
+                </div>
+
+                <div class="postbutton">
+                    <button type="submit" id="postBtn" class="postBtn">Post</button>
+                </div>
             
-            <i id="expandBtn" class="fa-solid fa-maximize enlargebtn expandBtn"></i>
-            <button type="submit" id="postBtn" class="postBtn">Post</button>
+            
             </div>
       </form>
     @endguest

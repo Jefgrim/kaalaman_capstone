@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href={{asset('./css/app.css')}}>
     <link rel="shortcut icon" href="{{ asset('./favicon.ico') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <script src="https://js.pusher.com/7.2/pusher.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -71,7 +72,7 @@
             </div>
             <div class="categoryContainer">
               <input type="checkbox" name="category" id="technologyBtn" /><label
-                for="Technology"
+                for="Technology" class="label-categories"
                 >Technology <span id="technologyCategoryCounter">0</span></label
               >
             </div>
@@ -84,7 +85,7 @@
             <div class="categoryContainer">
               <input type="checkbox" name="category" id="healthBtn" /><label
                 for="Health & lifestyle"
-                >Health & lifestyle <span id="healthCategoryCounter">0</span></label
+                >Health/Lifestyle <span id="healthCategoryCounter">0</span></label
               >
             </div>
             <div class="categoryContainer">
