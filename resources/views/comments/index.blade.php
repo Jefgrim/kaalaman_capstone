@@ -155,7 +155,13 @@
                             @else
                                 <div class="thumbsUpDownContainer">
                                     <div class="replyThumbsUp">
-                                        <i class="fa-regular fa-thumbs-up" id="likereply9"></i>
+                                        <form action="/likecomments" method="POST"id="likeComment{{$comment->id}}">
+                                            {{ csrf_field() }}
+                                            <input type="hidden" name="commentId" value="{{$comment->id}}">
+                                            <input type="hidden" name="userId" value="{{Auth::id()}}">
+                                            <input type="hidden" name="status" value="liked">
+                                            <i class="fa-regular fa-thumbs-up" class="btn" id="{{$comment->id}}" onclick="likesComment(); return false"></i>
+                                        </form>
                                     </div>
                                     <div class="replyThumbsUp">
                                         <i class="fa-regular fa-thumbs-down" id="dislikereply9"></i>
@@ -171,15 +177,13 @@
     @endforeach
     <script type="text/javascript">
         function likesComment(){
-           let btnId= event.srcElement.id
+           let btnId= event.srcElement.parentNode.id
+           console.log(btnId)
          $.ajax({
-                        type: 'post',
-                        url: '/dislike',
-                        data: $(`#${btnId}`).serialize(),
-                        success: function () {
-                        alert("success");
-                        }
-                    });
-         }
+                type: 'post',
+                url: '/likecomments',
+                data: $(`#${btnId}`).serialize(),
+                });
+         };
         </script>
 @endsection
