@@ -13,10 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('dislike', function (Blueprint $table) {
+        Schema::create('dislikethread', function (Blueprint $table) {
             $table->id();
             $table->foreignId("userId")->constrained('users');
             $table->foreignId("threadId")->constrained('thread');
+            $table->string("status");
             $table->timestamps();
         });
     }
@@ -28,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('dislike');
+        Schema::dropIfExists('dislikethread');
     }
 };

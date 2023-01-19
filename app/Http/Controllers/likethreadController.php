@@ -98,10 +98,10 @@ class likethreadController extends Controller
         if(likeThread::where('userId','=', Auth::id())->where('threadId','=',$request->threadId)->value('userId')==Auth::id()){
           $likedThreadId =likeThread::where('userId','=', Auth::id())->where('threadId','=',$request->threadId)->value('id');
          
-            if(likeThread::where('userId','=', Auth::id())->where('threadId','=',$request->threadId)->value('status') == "like") {
+            if(likeThread::where('userId','=', Auth::id())->where('threadId','=',$request->threadId)->value('status') == "liked") {
                 likeThread::where('id',$likedThreadId)->update(['status'=>'unlike']);
             }
-            else{
+            else if(likeThread::where('userId','=', Auth::id())->where('threadId','=',$request->threadId)->value('status') == "liked"){
                 likeThread::where('id',$likedThreadId)->update(['status'=>'liked']);
             }
 
