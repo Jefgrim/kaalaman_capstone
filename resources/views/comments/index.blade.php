@@ -53,7 +53,7 @@
 </div>
 <div class="toast sticky-top" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="false">
     <div class="toast-body">
-      A New Comment is posted, click reload page to see the latest thread.
+      A New Comment is posted, click reload page to see the latest comment.
       <div class="mt-2 pt-2 border-top">
         <button type="button" class="btn btn-primary btn-sm" onclick="window.location.reload()">Reload Page</button>
         <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="toast">Close</button>
@@ -63,7 +63,11 @@
 <div class="threadContent {{$thread->category}}">
     <div class="avatarTextsContainer">
         <div class="threadUserAvatar">
-            <img src=".//images/Avatar Users2_1.png">
+            @if ($thread->users->image == null)
+                <img class="user-icon" src="{{asset("./images/defaultDp.png")}}" width="100" height="100" alt="" style="border-radius: 50%">
+            @else
+                <img class="user-icon" src="{{asset($thread->users->image)}}" width="100" height="100" alt="" style="border-radius: 50%">
+             @endif
             <span id="usernamethread{{$thread->id}}">{{$thread->users->name}}</span>
         </div>
         <div class="threadTextsContainer">
@@ -124,7 +128,11 @@
                     <div class="replyContent">
                         <div class="avatarTextsContainer">
                             <div class="replyUserAvatar">
-                                <img src=".//images/Avatar Users2_29.png">
+                                @if ($comment->userscomment->image == null)
+                                <img class="user-icon" src="{{asset("./images/defaultDp.png")}}" width="100" height="100" alt="" style="border-radius: 50%">
+                                @else
+                                <img class="user-icon" src="{{asset($comment->userscomment->image)}}" width="100" height="100" alt="" style="border-radius: 50%">
+                                @endif
                                 <span>{{$comment->userscomment->name}}</span>
                             </div>
                             <div class="replyTexts">
@@ -147,7 +155,13 @@
                             @else
                                 <div class="thumbsUpDownContainer">
                                     <div class="replyThumbsUp">
-                                        <i class="fa-regular fa-thumbs-up" id="likereply9"></i>
+                                        <form action="/likecomments" method="POST"id="likeComment{{$comment->id}}">
+                                            {{ csrf_field() }}
+                                            <input type="hidden" name="commentId" value="{{$comment->id}}">
+                                            <input type="hidden" name="userId" value="{{Auth::id()}}">
+                                            <input type="hidden" name="status" value="liked">
+                                            <i class="fa-regular fa-thumbs-up" class="btn" id="{{$comment->id}}" onclick="likesComment(); return false"></i>
+                                        </form>
                                     </div>
                                     <div class="replyThumbsUp">
                                         <i class="fa-regular fa-thumbs-down" id="dislikereply9"></i>
@@ -159,6 +173,17 @@
                             @endguest
                         </div>
                     </div>
-            @endif
+             @endif
     @endforeach
+    <script type="text/javascript">
+        function likesComment(){
+           let btnId= event.srcElement.parentNode.id
+           console.log(btnId)
+         $.ajax({
+                type: 'post',
+                url: '/likecomments',
+                data: $(`#${btnId}`).serialize(),
+                });
+         };
+        </script>
 @endsection

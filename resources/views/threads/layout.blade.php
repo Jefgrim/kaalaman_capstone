@@ -34,7 +34,11 @@
           @else
               <div class="user">
                   <div class="userDropDown headerIcons">
-                      <img src={{asset("./images/AvatarUsers2_20.png")}} />
+                    @if (Auth::user()->image == null)
+                      <img class="user-icon" src="{{asset("./images/defaultDp.png")}}" width="100" height="100" alt="" style="border-radius: 100%">
+                     @else
+                      <img class="user-icon" src="{{asset(Auth::user()->image)}}" width="100" height="100" alt="" style="border-radius: 100%">
+                     @endif
                       <div class="user-Section" id="userSection" style="display: none">
                           <span>{{Auth::user()->name}}</span>
                           <button><a href="{{url('/profile/' . Auth::id())}}" class="userDropDownButton">Account Profile</a></button>

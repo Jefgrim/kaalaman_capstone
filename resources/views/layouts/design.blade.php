@@ -10,7 +10,7 @@
     integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <script src="https://js.pusher.com/7.2/pusher.min.js"></script>
     <link rel="stylesheet" href={{asset('./css/app.css')}}>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   </head>
 
   <body>
@@ -32,7 +32,11 @@
           @else
               <div class="user">
                   <div class="userDropDown headerIcons">
-                      <img src={{asset("./images/AvatarUsers2_20.png")}} />
+                    @if (Auth::user()->image == null)
+                      <img class="user-icon" src="{{asset("./images/defaultDp.png")}}" width="100" height="100" alt="" style="border-radius: 100%">
+                    @else
+                     <img class="user-icon" src="{{asset(Auth::user()->image)}}" width="100" height="100" alt="" style="border-radius: 100%">
+                    @endif
                       <div class="user-Section" id="userSection" style="display: none">
                           <span>{{Auth::user()->name}}</span>
                           <button><a href="{{url('/profile/' . Auth::id())}}" class="userDropDownButton">Account Profile</a></button>
@@ -215,5 +219,8 @@
       src="https://kit.fontawesome.com/26177573c7.js"
       crossorigin="anonymous"
     ></script>
+    <script type="text/javascript">
+      $.ajaxSetup({ headers: { 'csrftoken' : '{{ csrf_token() }}' } });
+       </script> 
   </body>
 </html>

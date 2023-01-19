@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\likethread;
 use App\Models\Thread; //add contact model, since model gets the data from the database
 use App\Models\Comment; //add contact model, since model gets the data from the database
 use App\Models\User; //add contact model, since model gets the data from the database
@@ -20,7 +21,7 @@ class ThreadController extends Controller
      */
     public function index()
     {
-        $threads = Thread::with("users")->get();
+        $threads = Thread::orderBy('id', 'DESC')->with("users")->get();
         $latestPost = Thread::with("users")->get()->last();
         return view('threads.index')->with('threads' , $threads)->with('latestPost', $latestPost);
     }
@@ -119,7 +120,7 @@ class ThreadController extends Controller
     public function searchThread(Request $request)
     {
         
-        $threads = Thread::with("users")->get();
+        $threads = Thread::orderBy('id', 'DESC')->with("users")->get();
         $filteredThread = Thread::with("users")->where('title','LIKE','%'.$request->seacrhInput."%")
         ->orWhere('category','LIKE','%'.$request->seacrhInput."%")
         ->orWhere('threadpost','LIKE','%'.$request->seacrhInput."%")->get();
