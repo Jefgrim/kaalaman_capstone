@@ -2,29 +2,21 @@
 
 @section('title')
     {{$userProfile->name}}  {{--name came from the database  --}}
-    
-    
 @endsection
 
 @section('userProfile')
-
-    <h2>Profile of {{$userProfile->name}}</h2>
-
-    <div class="profile-Container">
+    <div class="profile-Container mt-4">
         <div class="profiledetails-container1">
             
         </div>
 
         <div class="profiledetails-container2">
-            <div class="profilePicture-container">
-                {{-- <div class="profilepic">
-                </div> --}}
+            <div class="profilePicture-container"> {{-- <div class="profilepic"> </div> --}}
                 <div class="upload">
-                   <img class="user-icon" src={{asset("./images/blankuser.png")}} width="100" height="100" alt="">
-                   <div class="round">
-                    <input class="upload-picture" type="file" accept="image/png, image/jpg">
-                    <i class="fa fa-camera text-light"></i>
-                   </div>
+                  @if ($userProfile->image == null)
+                  <img class="user-icon" src="{{$userProfile->image}}" width="100" height="100" alt="">
+                  @endif
+                   <img class="user-icon" src="{{$userProfile->image}}" width="100" height="100" alt="">
                 </div>
                 
             </div>
@@ -102,74 +94,6 @@
                   </div>
                 </div>
               </div>
-
-              
-
-            
-                {{-- <form class="form-control" action="#" method="#">
-                    <div>
-                        <label for="name">Name</label>
-                        <input type="text" name="name" id="name"> 
-                    </div> 
-                    
-                    <div>
-                        <label>Email</label>
-                        <input type="email" name="email" id="email"> 
-                    </div>
-                    
-                    <div>
-                        <label>Date of Birth</label>
-                        <input type="date" name="date" id="date" max="2007-12-31"> 
-                    </div>
-                    
-                    <div>
-                        <label for="gender">Gender</label>
-                        <select id="gender">
-                            <option disabled selected>Select gender</option>
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
-                            <option value="other">Other</option>
-                        </select>    
-                    </div>    
-                </form> --}}
-                    
-               
-                      
-            
-            
-            {{-- <div class="input-group">
-                
-                        <input type="text" class="form-control mb-3" placeholder="Name" aria-label="Recipient's username with two button addons">
-                        <button class="btn btn-secondary mb-3" type="button">Edit</button>
-                        <button class="btn btn-success mb-3" type="button">Save</button>
-                    </div>
-
-                    <div class="input-group">
-              
-                        <input type="email" class="form-control mb-3" placeholder="Email" aria-label="Recipient's       username with two button addons">
-                        <button class="btn btn-secondary mb-3" type="button">Edit</button>
-                        <button class="btn btn-success mb-3" type="button">Save</button>
-                    </div>
-
-                        <label for="date" class="Dob text-light">Date of Birth</label>
-                        <input
-                             type="date"
-                             id="date"
-                             name="date"
-                             min="1940-01-01"
-                             max="2007-12-31"
-                             value="2022-09-30"
-                             class="input-field"/>
-
-                    
-                         <select class="select-gender">
-                            <option class="gender-option" disabled selected>Choose a gender</option>
-                            <option class="gender-option" value="male">Male</option>
-                            <option class="gender-option" value="female">Female</option>
-                            <option class="gender-option" value="other">Other</option>
-                        
-                        </select> --}}
-
         </div>
 
         <div class="profiledetails-container1">
