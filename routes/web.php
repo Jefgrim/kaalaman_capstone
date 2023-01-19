@@ -5,6 +5,7 @@ use App\Http\Controllers\ThreadController;
 use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\likethreadController;
+use App\Http\Controllers\DislikethreadController;
 
 /*
 |--------------------------------------------------------------------------
@@ -85,3 +86,4 @@ Auth::routes();
  
  Route::get('/', [ThreadController::class, 'searchThread']);
  Route::post('/', [likethreadController::class, 'likeThread']);
+ Route::post('/dislike', [DislikethreadController::class, 'Dislikethread']);
