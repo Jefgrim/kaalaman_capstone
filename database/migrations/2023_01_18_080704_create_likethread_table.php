@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId("userId")->constrained('users');
             $table->foreignId("threadId")->constrained('thread');
+            $table->string("status");
             $table->timestamps();
         });
     }

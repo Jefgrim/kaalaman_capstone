@@ -10,8 +10,8 @@ class likethread extends Model
     use HasFactory;
 
     protected $table = 'likethread';
-    protected $primaryKey = 'likethreadId';
-    protected $fillable = ['userId', 'likethreadId', 'threadId'];
+    protected $primaryKey = 'id';
+    protected $fillable = ['userId', 'likethreadId', 'threadId' ,'status'];
     
     
     public function likeThread(){

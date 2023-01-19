@@ -95,22 +95,24 @@ class likethreadController extends Controller
      */
     public function likeThread(Request $request)
     {
-        $likeThread= new likeThread;
-        $likeThread->userId = Auth::id(); 
-        $likeThread->threadId = $request->threadId;
-        $likeThread->save();
+        if(likeThread::where('userId','=', Auth::id())->where('threadId','=',$request->threadId)->value('userId')==Auth::id()){
+          $likedThreadId =likeThread::where('userId','=', Auth::id())->where('threadId','=',$request->threadId)->value('id');
+         
+            if(likeThread::where('userId','=', Auth::id())->where('threadId','=',$request->threadId)->value('status') == "like") {
+                likeThread::where('id',$likedThreadId)->update(['status'=>'unlike']);
+            }
+            else{
+                likeThread::where('id',$likedThreadId)->update(['status'=>'liked']);
+            }
 
-        // $data = $request->validate([
-        //     'userId' => 'required',
-        //     'threadId' => 'required',
-          
-        // ]);
-
-        // $project = User::create($data);
-
-        // return response()->json(['success'=>'Laravel ajax example is being processed.']);
-
-      
+        }else{
+            $likeThread= new likeThread;
+            $likeThread->userId = Auth::id(); 
+            $likeThread->threadId = $request->threadId;
+            $likeThread->status =$request->status;
+            $likeThread->save();
+        }
+       
         
     }
 }
