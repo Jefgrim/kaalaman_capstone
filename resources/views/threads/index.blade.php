@@ -74,10 +74,10 @@ function likes(){
     likeBtn.style.color = "green"
    }
  $.ajax({
-                type: 'post',
-                url: '/',
-                data: $(`#${btnId}`).serialize()
-            });
+     type: 'post',
+     url: '/',
+     data: $(`#${btnId}`).serialize()
+     });
  }
 </script>
 
