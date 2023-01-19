@@ -6,7 +6,7 @@ use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\likethreadController;
 use App\Http\Controllers\DislikethreadController;
-
+use App\Http\Controllers\LikeCommentController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -87,3 +87,4 @@ Auth::routes();
  Route::get('/', [ThreadController::class, 'searchThread']);
  Route::post('/', [likethreadController::class, 'likeThread']);
  Route::post('/dislike', [DislikethreadController::class, 'Dislikethread']);
+ Route::post('/likecomments', [LikeCommentController::class, 'LikeComment']);

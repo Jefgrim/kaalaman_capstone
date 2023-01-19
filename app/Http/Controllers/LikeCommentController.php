@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Comment;
 use Illuminate\Support\Facades\Auth;
+use App\Models\LikeComment;
+use DB;
 
 class LikeCommentController extends Controller
 {
@@ -85,4 +87,25 @@ class LikeCommentController extends Controller
     {
         //
     }
+
+    public function LikeComment(Request $request)
+    {
+        if(likecomment::where('userId','=', Auth::id())->where('commentId','=',$request->commentId)->value('userId')==Auth::id()){
+          $likedComment =likecomment::where('userId','=', Auth::id())->where('commentId','=',$request->commentId)->value('id');
+         
+            if(likeComment::where('userId','=', Auth::id())->where('commentId','=',$request->commentId)->value('status') == "liked") {
+                likeComment::where('id', $likedComment)->update(['status'=>'unlike']);
+            }
+            else if(likeComment::where('userId','=', Auth::id())->where('commentId','=',$request->commentId)->value('status') == "unlike"){
+                likeComment::where('id', $likedComment)->update(['status'=>'liked']);
+            }
+
+        }else{
+            $likeComment= new likeComment;
+            $likeComment->userId = Auth::id(); 
+            $likeComment->commentId = $request->commentId;
+            $likeComment->status =$request->status;
+            $likeComment->save();
+        }
+}
 }
