@@ -159,6 +159,19 @@
                             @endguest
                         </div>
                     </div>
-            @endif
+             @endif
     @endforeach
+    <script type="text/javascript">
+        function likesComment(){
+           let btnId= event.srcElement.id
+         $.ajax({
+                        type: 'post',
+                        url: '/dislike',
+                        data: $(`#${btnId}`).serialize(),
+                        success: function () {
+                        alert("success");
+                        }
+                    });
+         }
+        </script>
 @endsection

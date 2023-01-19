@@ -29,7 +29,7 @@
                                 <input type="hidden" name="userId" value="{{Auth::id()}}">
                                 <input type="hidden" name="status" value="liked">
                                 <i class="fa-regular fa-thumbs-up"><button  type="submit" class="btn"  id="{{$item->id}}"></button></i>
-                         </form>
+                            </form>
 
                         </div>
                         <div class="threadThumbsDown">
