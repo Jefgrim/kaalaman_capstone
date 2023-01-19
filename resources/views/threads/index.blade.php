@@ -25,18 +25,22 @@
                            
                             <form action="/" method="POST"id="likeThreadId{{$item->id}}" onsubmit="likes();return false">
                                 {{ csrf_field() }}
-                                    
-                               
                                 <input type="hidden" name="threadId" value="{{$item->id}}">
                                 <input type="hidden" name="userId" value="{{Auth::id()}}">
                                 <input type="hidden" name="status" value="liked">
                                 <i class="fa-regular fa-thumbs-up"><button  type="submit" class="btn"  id="{{$item->id}}"></button></i>
-                                
-                            </form>
+                         </form>
 
                         </div>
                         <div class="threadThumbsDown">
-                            <i class="fa-regular fa-thumbs-down" id="dislikepost5"></i>
+                            <form action="/dislike" method="POST"id="dislikeThreadId{{$item->id}}" onsubmit="dislikes();return false">
+                                {{ csrf_field() }}
+                                <input type="hidden" name="threadId" value="{{$item->id}}">
+                                <input type="hidden" name="userId" value="{{Auth::id()}}">
+                                <input type="hidden" name="status" value="disliked">
+                                <i class="fa-regular fa-thumbs-down"></i><button  type="submit" class="btn"  id="{{$item->id}}"></button></i>
+                         </form>
+                           
                         </div>
                     </div>
                 @endguest
@@ -51,8 +55,7 @@
  
  
 <script type="text/javascript">
-
- function likes(){
+function likes(){
    let btnId= event.srcElement.id
  $.ajax({
                 type: 'post',
@@ -63,8 +66,21 @@
                 }
             });
  }
-
 </script>
+
+<script type="text/javascript">
+    function dislikes(){
+       let btnId= event.srcElement.id
+     $.ajax({
+                    type: 'post',
+                    url: '/dislike',
+                    data: $(`#${btnId}`).serialize(),
+                    success: function () {
+                    alert("success");
+                    }
+                });
+     }
+    </script>
 
 
 
