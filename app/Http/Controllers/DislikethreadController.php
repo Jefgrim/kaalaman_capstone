@@ -4,8 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Dislikethread;
+use App\Models\Thread;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
-class DislikeController extends Controller
+class DislikethreadController extends Controller
 {
     /**
      * Display a listing of the resource.
