@@ -86,4 +86,31 @@ class DislikethreadController extends Controller
     {
         //
     }
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function Dislikethread(Request $request)
+    {
+        if( Dislikethread::where('userId','=', Auth::id())->where('threadId','=',$request->threadId)->value('userId')==Auth::id()){
+            $DislikedThread = Dislikethread::where('userId','=', Auth::id())->where('threadId','=',$request->threadId)->value('id');
+           
+              if( Dislikethread::where('userId','=', Auth::id())->where('threadId','=',$request->threadId)->value('status') == "Disliked") {
+                Dislikethread::where('id',$DislikedThread)->update(['status'=>'unlike']);
+              }
+              else if( Dislikethread::where('userId','=', Auth::id())->where('threadId','=',$request->threadId)->value('status') == "Disliked"){
+                Dislikethread::where('id',$DislikedThread)->update(['status'=>'liked']);
+              }
+  
+          }else{
+              $DislikeThread= new Dislikethread;
+              $DislikeThread->userId = Auth::id(); 
+              $DislikeThread->threadId = $request->threadId;
+              $DislikeThread->status =$request->status;
+              $DislikeThread->save();
+          }
+         
+    }
 }
