@@ -31,7 +31,12 @@
                                 <input type="hidden" name="threadId" value="{{$item->id}}">
                                 <input type="hidden" name="userId" value="{{Auth::id()}}">
                                 <input type="hidden" name="status" value="liked">
-                                <i class="fa-regular fa-thumbs-up" class="btn" id="{{$item->id}}" onclick="likes(); return false"></i>
+                                @if(DB::table('likethread')->where('userId','=', Auth::id())->where('threadId','=',$item->id)->value('status') == "liked")
+                                    <i class="fa-regular fa-thumbs-up" class="btn" id="like{{$item->id}}" onclick="likes(); return false" style="color: green"></i>
+                                    @else
+                                    <i class="fa-regular fa-thumbs-up" class="btn" id="like{{$item->id}}" onclick="likes(); return false" style="color: white"></i>
+                                @endif
+                                
                              </form>
                         </div>
                         
@@ -41,7 +46,12 @@
                                 <input type="hidden" name="threadId" value="{{$item->id}}">
                                 <input type="hidden" name="userId" value="{{Auth::id()}}">
                                 <input type="hidden" name="status" value="disliked">
-                                <i class="fa-regular fa-thumbs-down" class="btn" id="{{$item->id}}" onclick="dislikes(); return false"></i>
+                                @if(DB::table('dislikethread')->where('userId','=', Auth::id())->where('threadId','=',$item->id)->value('status') == "disliked")
+                                     <i class="fa-regular fa-thumbs-down" class="btn" id="{{$item->id}}" onclick="dislikes(); return false" style="color: red"></i>
+                                    @else
+                                    <i class="fa-regular fa-thumbs-down" class="btn" id="{{$item->id}}" onclick="dislikes(); return false" style="color: white"></i>
+                                @endif
+                               
                             </form>
                         </div>
                     </div>
@@ -59,6 +69,16 @@
 <script type="text/javascript">
 function likes(){
    let btnId= event.srcElement.parentNode.id
+   let likeBtn = document.querySelector(`#${event.srcElement.id}`)
+   console.log(likeBtn.style.color)
+   if(likeBtn.style.color == "green") {
+    likeBtn.style.color = "white"
+   }else if(likeBtn.style.color == 'white'){
+    likeBtn.style.color = "green"
+   }
+//    if (${{DB::table('likethread')->where('userId','=', Auth::id())->where('threadId','=',$item->id)->value('status') == "liked"}}) {
+//     console.log("status is liked")
+//    }
  $.ajax({
                 type: 'post',
                 url: '/',
