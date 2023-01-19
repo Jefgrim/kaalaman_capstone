@@ -8,7 +8,7 @@
 
 <div class="centerContainer">
     <div class="centerContent">
-        <a class="footerLinks" href="/"><i class="fa-solid fa-house"></i></a>
+        <a class="footerLinks" href="/"></a>
         <h2><strong>Terms and Conditions</strong></h2>
 
 <p>Welcome to Kaalaman!</p>

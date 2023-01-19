@@ -79,9 +79,14 @@ class UserProfileController extends Controller
      * @param  \App\Models\UserProfile  $userProfile
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, UserProfile $userProfile)
+    public function update(Request $request, $id)
     {
-        //
+        $profile = UserProfile::find($id);
+        $input = $request->all();
+        $filename = time().$request->file('image')->getClientOriginalName();
+        $path = $request->file('image')->storeAs('images', $filename, 'public'); //saved to public images folder
+        $input['image'] = '/storage/' . $path; 
+        $profile->update($input);
     }
 
     /**
