@@ -164,7 +164,14 @@
                                         </form>
                                     </div>
                                     <div class="replyThumbsUp">
-                                        <i class="fa-regular fa-thumbs-down" id="dislikereply9"></i>
+                                        <form action="/dislikecomments" method="POST"id="dislikecomment{{$comment->id}}">
+                                            {{ csrf_field() }}
+                                            <input type="hidden" name="commentId" value="{{$comment->id}}">
+                                            <input type="hidden" name="userId" value="{{Auth::id()}}">
+                                            <input type="hidden" name="status" value="dislike">
+                                            <i class="fa-regular fa-thumbs-down" class="btn" id="{{$comment->id}}" onclick="DislikesComment(); return false"></i>
+                                        </form>
+                                        
                                     </div>
                                 </div>
                                 <div class="replyBtnContainer post5Batch" id="{{$comment->id}}">
@@ -186,4 +193,16 @@
                 });
          };
         </script>
+
+        <script type="text/javascript">
+            function DislikesComment(){
+               let btnId= event.srcElement.parentNode.id
+               console.log(btnId)
+             $.ajax({
+                    type: 'post',
+                    url: '/dislikecomments',
+                    data: $(`#${btnId}`).serialize(),
+                    });
+             };
+            </script>
 @endsection

@@ -76,9 +76,7 @@ function likes(){
    }else if(likeBtn.style.color == 'white'){
     likeBtn.style.color = "green"
    }
-//    if (${{DB::table('likethread')->where('userId','=', Auth::id())->where('threadId','=',$item->id)->value('status') == "liked"}}) {
-//     console.log("status is liked")
-//    }
+
  $.ajax({
                 type: 'post',
                 url: '/',
