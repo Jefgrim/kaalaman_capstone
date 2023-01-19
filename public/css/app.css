@@ -200,12 +200,18 @@ header {
 .categoriesContainer {
     height: 100%;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    
+    
 }
 
 .categoryContainer {
     color: var(--third-color);
     margin-left: 10px;
     margin-bottom: 10px;
+    color: whitesmoke;
+    
 }
 
 .categoryContainer span {
@@ -219,6 +225,8 @@ header {
 .categoryContainer input {
     cursor: pointer;
 }
+
+
 
 .categories-text {
     cursor: pointer;
@@ -411,9 +419,11 @@ header {
     height: 10%;
     width: 100%;
     display: flex;
-    flex-direction: row;
+    /* flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+    align-items: center; */
+    justify-content: space-between;
+    
 }
 
 .expandPostThread .threadBtnContainer {
@@ -433,11 +443,25 @@ header {
     border-radius: 5px;
     border: 0px;
     height: 100%;
+    margin-top: -10px;
 }
 
 .expandBtn {
     color: var(--third-color);
     font-size: 22px;
+    margin-top: -10px;
+}
+
+.expandbutton {
+    width: 20%;
+    display: flex;
+    margin-left: 12px;
+}
+
+.postbutton {
+    width: 20%;
+    display: flex;
+    margin-right: 12px;
 }
 
 .expandPostThread .thread-post {
@@ -451,6 +475,8 @@ header {
     display: none;
     justify-content: center;
     align-items: center;
+   
+    
 }
 
 .expandPostThread {
@@ -1166,6 +1192,20 @@ input[type=file]::-webkit-file-upload-button {
     margin-top: 20px;
 }
 
+/* @media screen and (max-width: 1668px) {
+    .sidebar {
+        width: auto;
+        font-size: 14px;
+    }
+} */
+
+/* @media screen and (max-width: 1430px) {
+    .sidebar {
+        width: auto;
+        font-size: 12px;
+    }
+} */
+
 @media screen and (max-width: 1024px) {
     .sidebar,
     .rightContainer {
@@ -1232,9 +1272,78 @@ input[type=file]::-webkit-file-upload-button {
         height: 20px;
     }
 }
+@media screen and (max-width: 876px){
+    .sideBar-toggle {
+        display: flex;
+    }
+
+    .sidebar,
+    .rightContainer {
+        display: none;
+    }
+
+    .threadContainer {
+        width: 100%;
+    }
+
+    
+    .hidePostThreadBtn {
+        display: flex;
+    }
+
+    .threadNavContainer {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .searchBar {
+        flex: 1;
+        padding-left: 5px;
+    }
+
+    .threadContent {
+        flex-direction: row;
+        font-size: 15px;
+    }
+
+    .avatarTextsContainer {
+        justify-content: center;
+    }
+
+    .threadReaction {
+        justify-content: center;
+    }
+
+    .sideBarBtn {
+        display: flex;
+    }
+
+    .sidebar {
+        position: absolute;
+        width: auto;
+        height: auto;
+    }
+
+    .hide {
+        display: none;
+    }
+
+    .modular {
+        width: 100%;
+    }
+
+    .expandPostThread {
+        position: absolute;
+        justify-content: center;
+        right: 100px;
+        left: 100px;
+    }
+}
+
+
 
 @media screen and (max-width: 800px) {
-    .sidebar,
+    /* .sidebar,
     .rightContainer {
         display: none;
     }
@@ -1297,7 +1406,7 @@ input[type=file]::-webkit-file-upload-button {
         justify-content: center;
         right: 100px;
         left: 100px;
-    }
+    } */
 }
 
 @media screen and (max-width: 690px) {
