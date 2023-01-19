@@ -84,10 +84,31 @@
         @else
             <div class="thumbsUpDownContainer">
                 <div class="threadThumbsUp">
-                    <i class="fa-regular fa-thumbs-up" id="likepost5"></i>
+                    <form action="/" method="POST"id="likeThreadId{{$thread->id}}">
+                        {{ csrf_field() }}
+                        <input type="hidden" name="threadId" value="{{$thread->id}}">
+                        <input type="hidden" name="userId" value="{{Auth::id()}}">
+                        <input type="hidden" name="status" value="liked">
+                        @if(DB::table('likethread')->where('userId','=', Auth::id())->where('threadId','=',$thread->id)->value('status') == "liked")
+                            <i class="fa-regular fa-thumbs-up" class="btn" id="like{{$thread->id}}" onclick="likes(); return false" style="color: green"></i>
+                            @else
+                            <i class="fa-regular fa-thumbs-up" class="btn" id="like{{$thread->id}}" onclick="likes(); return false" style="color: white"></i>
+                        @endif
+                     </form>
                 </div>
                 <div class="threadThumbsDown">
-                    <i class="fa-regular fa-thumbs-down" id="dislikepost5"></i>
+                    <form action="/dislike" method="POST"id="dislikeThreadId{{$thread->id}}">
+                        {{ csrf_field() }}
+                        <input type="hidden" name="threadId" value="{{$thread->id}}">
+                        <input type="hidden" name="userId" value="{{Auth::id()}}">
+                        <input type="hidden" name="status" value="disliked">
+                        @if(DB::table('dislikethread')->where('userId','=', Auth::id())->where('threadId','=',$thread->id)->value('status') == "disliked")
+                             <i class="fa-regular fa-thumbs-down" class="btn" id="dislike{{$thread->id}}" onclick="dislikes(); return false" style="color: red"></i>
+                            @else
+                            <i class="fa-regular fa-thumbs-down" class="btn" id="dislike{{$thread->id}}" onclick="dislikes(); return false" style="color: white"></i>
+                        @endif
+                       
+                    </form>
                 </div>
             </div>
             <div class="replyBtnContainer">
@@ -96,6 +117,41 @@
         @endguest
     </div>
 </div>
+
+<script type="text/javascript">
+    function likes(){
+       let btnId= event.srcElement.parentNode.id
+       let likeBtn = document.querySelector(`#${event.srcElement.id}`)
+       console.log(likeBtn.style.color)
+       if(likeBtn.style.color == "green") {
+        likeBtn.style.color = "white"
+       }else if(likeBtn.style.color == 'white'){
+        likeBtn.style.color = "green"
+       }
+     $.ajax({
+        type: 'post',
+        url: '/',
+        data: $(`#${btnId}`).serialize()
+        });
+     }
+    </script>
+    <script type="text/javascript">
+        function dislikes(){
+            let btnId= event.srcElement.parentNode.id
+            let dislikekeBtn = document.querySelector(`#${event.srcElement.id}`)
+            console.log(dislikekeBtn.style.color)
+            if(dislikekeBtn.style.color == "red") {
+                dislikekeBtn.style.color = "white"
+            }else if(dislikekeBtn.style.color == 'white'){
+                dislikekeBtn.style.color = "red"
+            }
+         $.ajax({
+            type: 'post',
+            url: '/dislike',
+            data: $(`#${btnId}`).serialize(),
+            });
+         }
+    </script>
 @endsection
 
 @section('replyModal')
