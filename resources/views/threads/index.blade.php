@@ -25,9 +25,13 @@
                            
                             <form action="/" method="POST"id="likeThreadId{{$item->id}}" onsubmit="likes();return false">
                                 {{ csrf_field() }}
+                                    
+                               
                                 <input type="hidden" name="threadId" value="{{$item->id}}">
                                 <input type="hidden" name="userId" value="{{Auth::id()}}">
+                                <input type="hidden" name="status" value="liked">
                                 <i class="fa-regular fa-thumbs-up"><button  type="submit" class="btn"  id="{{$item->id}}"></button></i>
+                                
                             </form>
 
                         </div>
@@ -50,16 +54,16 @@
 
  function likes(){
    let btnId= event.srcElement.id
-    $.ajax({
+ $.ajax({
                 type: 'post',
                 url: '/',
                 data: $(`#${btnId}`).serialize(),
                 success: function () {
-                alert("Email has been sent!");
+                alert("success");
                 }
             });
  }
-  
+
 </script>
 
 
@@ -67,67 +71,7 @@
 
 
 
-{{-- // function likethread(){
 
-  
-
-
-
-
-
-
-    // var formId = `${event.srcElement.id}`;
-    // alert(formId)
-    // var form = `#${formId}`;
-    // console.log(form)
-    // event.preventdefault();
-    // var url = $(this).attr('data-action');
-    
-    
-    // $value=$(this).val();
-    // console.log($value)
-    
-    // $.ajax({
-    //     url:'/',
-    //     type:'POST',
-    //     data: {'threadId':formId},
-    //     dataType: 'json',
-    //     contentType: false,
-    //     cache: false,
-    //     processData: false,
-
-    //     success:function(response)
-    //         {
-    //             $(form).trigger("reset");
-    //             alert(response.success)
-    //         },
-    //         error: function(response) {
-    //         }
-    // })
-    
-    
-//     $(form).click(function(){
-        
-    
-
-//     // $.ajax({
-//     //       type:'get',
-//     //       url:'{{URL::to('/')}}',
-//     //       data:{'seacrhInput':$value},
-
-//     //       success:function(data){
-//     //         console.log(data);
-//     //         $('.threadContentContainer').html(data)
-//     //       }
-
-//     //     })
-    
-    
-    
-    
-//  })
-
-// } --}}
 
    
  
