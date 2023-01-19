@@ -8,7 +8,7 @@
 
 <div class="centerContainer"> 
   <div class="centerContent"> 
-    <a class="footerLinks" href="/"><i class="fa-solid fa-house"></i></a>
+    <a class="footerLinks" href="/"></a>
     
     <div class="accordion">
         <div class="contentBoxFaq">
@@ -39,27 +39,37 @@
             </div>
     </div>
 
-    <div class="contentBoxFaq">
-      <div class="labelFaq">I can post anything here?</div>
-          <div class="contentFaq">
-              <p>
-                  Yes. As long it is not racist, sexist, slanderous, discriminatory, or containing extreme violence, adult materials, mature content, and files with virus, worm, trojan, spyware and other form of malwares.
-              </p>
-          </div>
-  </div>
+            <div class="contentBoxFaq">
+                 <div class="labelFaq">I can post anything here?</div>
+                    <div class="contentFaq">
+                        <p>
+                             Yes. As long it is not racist, sexist, slanderous, discriminatory, or containing extreme violence, adult materials, mature content, and files with virus, worm, trojan, spyware and other form of malwares.
+                        </p>
+                    </div>
+            </div>
 
-  <div class="contentBoxFaq">
-    <div class="labelFaq">Is it free to be a member of Kaalaman?</div>
-        <div class="contentFaq">
-            <p>
-                Yes, it is free. You have the option to send a donation to us. That donation will be use for maintaning Kaalaman.  
-            </p>
+            <div class="contentBoxFaq">
+                <div class="labelFaq">Is it free to be a member of Kaalaman?</div>
+                    <div class="contentFaq">
+                        <p>
+                            Yes, it is free.  
+                        </p>
+                    </div>
+            </div>
+            
+            <div class="contentBoxFaq">
+                <div class="labelFaq">Can I have multiple accounts?</div>
+                    <div class="contentFaq">
+                        <p>
+                            Yes, you can. As long as you follow the forum rules you should be fine.  
+                        </p>
+                    </div>
+            </div>
+
+
         </div>
-</div>
-      
-    </div>
 
-  </div>
+    </div>
 </div>
 
 

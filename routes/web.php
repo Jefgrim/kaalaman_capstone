@@ -57,8 +57,8 @@ Route::get('/about',function (){
 });
 
 
-Route::get('/contactUs',function (){
-    return view('Contact Us.index');
+Route::get('/ContactUs',function (){
+    return view('ContactUs.index');
 });
 
 Route::get('/404',function (){

@@ -358,7 +358,7 @@ header {
 }
 
 .selectCategory {
-    width: 40%;
+    width: 50%;
     font-size: 12px;
     margin: 0px 10px 0px 10px;
     border: none;
@@ -366,10 +366,11 @@ header {
     border-radius: 5px;
     color: var(--third-color);
     font-family: "Montserrat", sans-serif;
+    padding-left: 15px;
 }
 
 .titleInp {
-    width: 60%;
+    width: 50%;
     margin: 0px 10px 0px 10px;
     border: none;
     background-color: var(--fourth-color);
@@ -939,6 +940,7 @@ header {
     border-radius: 10px;
     overflow-y: scroll;
     color: white;
+    line-height: 1.8;
 }
 
 .centerContainer::-webkit-scrollbar {

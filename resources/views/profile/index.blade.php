@@ -63,34 +63,41 @@
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                      <form>
+                      <form action="/profile/{{Auth::id()}}" method="post" enctype="multipart/form-data">
+                        {{ csrf_field() }}
+                        @method('PATCH')
+                        
                         <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label">Name</label>
-                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="enter your name">
-                          </div>
-            
-                          <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-                          </div>
+                          <label class="form-label">Upload Profile Picture</label>
+                          <input class="upload-picture" name="image" type="file" accept="image/*">
+                        </div>
             
                           <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">Date of Birth</label>
-                            <input type="date" class="form-control" id="exampleFormControlInput1">
+                            <input type="date" class="form-control" name="dob" id="exampleFormControlInput1">
                           </div>
-            
+                          <div class="mb-3">
                           <label>Gender</label>
-                          <select class="form-select" aria-label="Default select example">
-                            <option disabled selected>select gender</option>
-                            <option value="1">Male</option>
-                            <option value="2">Female</option>
-                            <option value="3">Other</option>
+                            <select class="form-select" name="gender" aria-label="Default select example">
+                                <option disabled selected>select gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                          
                           </select>
+                        </div>
+
+                          <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Favorite Quote</label>
+                            <input type="text" class="form-control" name="quotes" id="exampleFormControlInput1">
+                          </div>
+
+                          <button type="submit" class="btn btn-primary">Save changes</button>
                       </form>
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                      <button type="button" class="btn btn-primary">Save changes</button>
+                     
                     </div>
                   </div>
                 </div>
