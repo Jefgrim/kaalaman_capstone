@@ -14,9 +14,10 @@
             <div class="profilePicture-container"> {{-- <div class="profilepic"> </div> --}}
                 <div class="upload">
                   @if ($userProfile->image == null)
-                  <img class="user-icon" src="{{$userProfile->image}}" width="100" height="100" alt="">
+                    <img class="user-icon" src="{{asset("./images/defaultDp.png")}}" width="100" height="100" alt="" style="border-radius: 100%">
+                  @else
+                    <img class="user-icon" src="{{asset($userProfile->image)}}" width="100" height="100" alt="" style="border-radius: 100%">
                   @endif
-                   <img class="user-icon" src="{{$userProfile->image}}" width="100" height="100" alt="">
                 </div>
                 
             </div>
