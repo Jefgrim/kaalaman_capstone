@@ -36,7 +36,6 @@
                                     @else
                                     <i class="fa-regular fa-thumbs-up" class="btn" id="like{{$item->id}}" onclick="likes(); return false" style="color: white"></i>
                                 @endif
-                                
                              </form>
                         </div>
                         
@@ -47,11 +46,10 @@
                                 <input type="hidden" name="userId" value="{{Auth::id()}}">
                                 <input type="hidden" name="status" value="disliked">
                                 @if(DB::table('dislikethread')->where('userId','=', Auth::id())->where('threadId','=',$item->id)->value('status') == "disliked")
-                                     <i class="fa-regular fa-thumbs-down" class="btn" id="{{$item->id}}" onclick="dislikes(); return false" style="color: red"></i>
+                                     <i class="fa-regular fa-thumbs-down" class="btn" id="dislike{{$item->id}}" onclick="dislikes(); return false" style="color: red"></i>
                                     @else
-                                    <i class="fa-regular fa-thumbs-down" class="btn" id="{{$item->id}}" onclick="dislikes(); return false" style="color: white"></i>
+                                    <i class="fa-regular fa-thumbs-down" class="btn" id="dislike{{$item->id}}" onclick="dislikes(); return false" style="color: white"></i>
                                 @endif
-                               
                             </form>
                         </div>
                     </div>
@@ -70,31 +68,43 @@
 function likes(){
    let btnId= event.srcElement.parentNode.id
    let likeBtn = document.querySelector(`#${event.srcElement.id}`)
-   console.log(likeBtn.style.color)
+   let dislikeBtnId = `dis${likeBtn.id}`
+    let dislikeBtn = document.querySelector(`#${dislikeBtnId}`)
    if(likeBtn.style.color == "green") {
     likeBtn.style.color = "white"
    }else if(likeBtn.style.color == 'white'){
     likeBtn.style.color = "green"
+    dislikeBtn.style.color = "white"
    }
-
  $.ajax({
-                type: 'post',
-                url: '/',
-                data: $(`#${btnId}`).serialize()
-            });
+     type: 'post',
+     url: '/',
+     data: $(`#${btnId}`).serialize()
+     });
  }
 </script>
 
 <script type="text/javascript">
     function dislikes(){
-       let btnId= event.srcElement.parentNode.id
+        let btnId= event.srcElement.parentNode.id
+        let dislikekeBtn = document.querySelector(`#${event.srcElement.id}`)
+        let likeBtnId = `${dislikekeBtn.id}`
+        likeBtnId = likeBtnId.toString().replace('dis', "")
+        let likeBtn = document.querySelector(`#${likeBtnId}`)
+
+        if(dislikekeBtn.style.color == "red") {
+            dislikekeBtn.style.color = "white"
+        }else if(dislikekeBtn.style.color == 'white'){
+            dislikekeBtn.style.color = "red"
+            likeBtn.style.color = "white"
+        }
      $.ajax({
-                    type: 'post',
-                    url: '/dislike',
-                    data: $(`#${btnId}`).serialize(),
-                });
+        type: 'post',
+        url: '/dislike',
+        data: $(`#${btnId}`).serialize(),
+        });
      }
-    </script>
+</script>
 @endsection
 
 @section('postThreadContent')

@@ -7,6 +7,7 @@ use App\Http\Controllers\CommentController;
 use App\Http\Controllers\likethreadController;
 use App\Http\Controllers\DislikethreadController;
 use App\Http\Controllers\LikeCommentController;
+use App\Http\Controllers\DislikeCommentController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -88,3 +89,4 @@ Auth::routes();
  Route::post('/', [likethreadController::class, 'likeThread']);
  Route::post('/dislike', [DislikethreadController::class, 'Dislikethread']);
  Route::post('/likecomments', [LikeCommentController::class, 'LikeComment']);
+ Route::post('/dislikecomments', [DislikeCommentController::class, 'dislikeComment']);
