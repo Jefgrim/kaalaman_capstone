@@ -1,5 +1,9 @@
 @extends('layouts.design')
 
+@section('title')
+    Register
+@endsection
+
 @section('register')
 <div class="container">
     <div class="row justify-content-center">
