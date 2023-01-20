@@ -66,9 +66,6 @@
                 <div class="replyBtnContainer">
                     <a href='{{url('/thread/comments/'.$item->id)}}'><i class="fa-solid fa-comment-dots"></i></a>
                 </div>
-                <div class="editBtnContainer">
-                    <a href='{{url('/thread/comments/'.$item->id)}}'><i class="fa-solid fa-comment-dots"></i></a>
-                </div>
             </div>
         </div>
  @endforeach
