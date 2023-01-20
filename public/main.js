@@ -16,14 +16,14 @@ for (let i = 0; i<accordion.length; i++ ){
 }
 //dropdown user
 let userdropdown =document.querySelector(".userDropDown")
-let notification =document.querySelector("#notification")
+// let notification =document.querySelector("#notification")
 // //event listener dropdown user
 userdropdown.addEventListener("click",toggleUserSection)
-notification.addEventListener('click',notificationSection)
+// notification.addEventListener('click',notificationSection)
 //button
-let darkModeBtn = document.querySelector("#darkmodeBtn");
+// let darkModeBtn = document.querySelector("#darkmodeBtn");
 //eventlistener
-darkModeBtn.addEventListener("click" , Darkmode)
+// darkModeBtn.addEventListener("click" , Darkmode)
 
 let technologyBtn = document.querySelector("#technologyBtn")
 let ecommerceBtn = document.querySelector("#ecommerceBtn")
@@ -39,6 +39,5 @@ gameBtn.addEventListener("change",filterCategories)
 foodBtn.addEventListener("change",filterCategories)
 
 categoriesCounter()
-
 sideBar();
 ExpandPostThread();

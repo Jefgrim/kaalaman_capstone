@@ -102,7 +102,7 @@ class DislikethreadController extends Controller
               if( Dislikethread::where('userId','=', Auth::id())->where('threadId','=',$request->threadId)->value('status') == "disliked") {
                 Dislikethread::where('id',$DislikedThread)->update(['status'=>'undisliked']);
               }
-              else if( Dislikethread::where('userId','=', Auth::id())->where('threadId','=',$request->threadId)->value('status') == "undisliked"){
+              else if( Dislikethread::where('userId','=', Auth::id())->where('threadId','=',$request->threadId)->value('status') == "undislike"){
                 Dislikethread::where('id',$DislikedThread)->update(['status'=>'disliked']);
                 $likedThreadId = DB::table('likethread')->where('threadId', '=', $request->threadId)->where('userId', '=', Auth::id())->value('id');
                 if($likedThreadId == null){
