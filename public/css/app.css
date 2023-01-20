@@ -120,6 +120,16 @@ header {
     flex-direction: column;
     color: var(--third-color);
 }
+.guestUser-Section-design{
+    width: 150px;
+    background-color: var(--primary-color);
+    position: absolute;
+    z-index: 1;
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    color: var(--third-color);
+}
 
 .userDropDownButton {
     text-decoration: none;
