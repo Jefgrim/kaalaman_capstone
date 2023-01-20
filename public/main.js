@@ -39,5 +39,6 @@ gameBtn.addEventListener("change",filterCategories)
 foodBtn.addEventListener("change",filterCategories)
 
 categoriesCounter()
-ExpandPostThread();
+
 sideBar();
+ExpandPostThread();

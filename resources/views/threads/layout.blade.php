@@ -26,7 +26,7 @@
               <div class="guestUser-Section" id="userSection" style="display: none">
                   
                   
-                  <a class="Log-in" href="{{ route('login') }}">Log-in</a> 
+            <a class="Log-in" href="{{ route('login') }}">Log-in</a> 
                
             <a class="Register" href="{{ route('register') }}">Register</a>
               </div>
@@ -40,11 +40,11 @@
                 
 
                   <div class="headerIcon">
-                    <i class="fa-regular fa-bell headerIcons" id="notification"></i>
+                    {{-- <i class="fa-regular fa-bell headerIcons" id="notification"></i> --}}
                     
                     @yield('notificationSection')
                   
-                      <i class="fa-regular fa-lightbulb headerIcons" id="darkmodeBtn"></i>
+                      {{-- <i class="fa-regular fa-lightbulb headerIcons" id="darkmodeBtn"></i> --}}
                   </div>
 
                   <div class="userDropDown headerIcons">
@@ -57,14 +57,16 @@
                           <span>{{Auth::user()->name}}</span>
                           <button><a href="{{url('/profile/' . Auth::id())}}" class="userDropDownButton">Account Profile</a></button>
                           
-                              <a class="userDropDownButton" href="{{ route('logout') }}"
-                                  onclick="event.preventDefault();
-                                  document.getElementById('logout-form').submit();">
-                                  {{ __('Logout') }}
-                              </a>
-                              <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                  @csrf
-                              </form>
+                          <button> 
+                            <a class="userDropDownButton" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                        </button>
                         
                       </div>
                   </div>
@@ -120,13 +122,28 @@
         <div class="threadContainer">
           <div class="threadNavContainer">
               <div class="sideBar-toggle"><i class="fa-solid fa-bars hamburgerbtn"></i>
-              </div>
+              </div> 
+              @yield('writethread')
+              
+            @guest
+            <div class="searchbarcontainer">
+              <div class="searchBarguest">
+                  <input
+                      type="text"
+                      class="input searchBarinput"
+                      placeholder="search"
+                      id="seacrhInput"
+                      name="seacrhInput"/>
+                          <i class="fa-solid fa-magnifying-glass searchBarLogo"></i>
 
-              <div class="writethread">
-                  <button class="writethreadbtn" id="expandBtn">Write a thread</button>
-                  <i class="fa-regular fa-pen-to-square text-light fs-1 write-icon"></i>
-              </div>
-            
+              
+                      @yield('hidePostThreadBtn')
+             
+                </div>
+            </div>
+          </div>
+           
+            @else
             <div class="searchbarcontainer">
               <div class="searchBar">
                   <input
@@ -143,6 +160,23 @@
                 </div>
             </div>
           </div>
+            @endguest
+            {{-- <div class="searchbarcontainer">
+              <div class="searchBar">
+                  <input
+                      type="text"
+                      class="input searchBarinput"
+                      placeholder="search"
+                      id="seacrhInput"
+                      name="seacrhInput"/>
+                          <i class="fa-solid fa-magnifying-glass searchBarLogo"></i>
+
+              
+                      @yield('hidePostThreadBtn')
+             
+                </div>
+            </div>
+          </div> --}}
 
           <div class="threadContentContainer">
 
