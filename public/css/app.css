@@ -1338,6 +1338,16 @@ input[type=file]::-webkit-file-upload-button {
    }
 }
 
+@media screen and (max-width: 1477px) {
+    .threadContainer {
+        width: 86%;
+    
+    }
+    .sidebar {
+        width: 14%;
+    }
+}
+
 @media screen and (max-width: 1419px) {
     .searchBarLogo {
         padding-left: 20px;
@@ -1358,10 +1368,18 @@ input[type=file]::-webkit-file-upload-button {
     }
 }
 
-@media screen and (max-width: 1351px) {
+@media screen and (max-width: 1265px) {
     .searchBarLogo {
         padding-left: 13px;
-    }
+        }
+
+        .threadContainer {
+            width: 84%;
+        
+        }
+        .sidebar {
+            width: 16%;
+        }
 }
 
 @media screen and (max-width: 1248px) {
@@ -1372,11 +1390,11 @@ input[type=file]::-webkit-file-upload-button {
 
 @media screen and (max-width: 1164px) {
     .threadContainer {
-        width: 84%;
+        width: 82%;
     
     }
     .sidebar {
-        width: 16%;
+        width: 18%;
     }
 
     .searchBarLogo {
@@ -1387,7 +1405,12 @@ input[type=file]::-webkit-file-upload-button {
 @media screen and (max-width: 1024px) {
     .sidebar
      {
-        width: 16%;
+        width: 20%;
+    }
+
+    .threadContainer {
+        width: 80%;
+    
     }
 
     .threadContent {
@@ -1395,9 +1418,7 @@ input[type=file]::-webkit-file-upload-button {
         font-size: 15px;
     }
 
-    .threadContainer {
-        width: 84%;
-    }
+
 
     .avatarTextsContainer {
         justify-content: center;
@@ -1455,6 +1476,20 @@ input[type=file]::-webkit-file-upload-button {
 @media screen and (max-width: 1017px) {
     .searchBarLogo {
         padding-left: 9px;
+    }
+}
+
+@media screen and (max-width: 882px) {
+    
+    .sidebar {
+        
+        width: 22%;
+        }
+    
+
+    .threadContainer {
+        width: 78%;
+    
     }
 }
 @media screen and (max-width: 876px){

@@ -1,4 +1,4 @@
-@extends('layouts.design')
+{{-- @extends('layouts.design')
 
 @section('UserIcon')
 
@@ -66,4 +66,4 @@
     </div>
   </div>
 </div>
-@endsection
+@endsection --}}
