@@ -1057,34 +1057,26 @@ a {
   height: 100%;
   width: 100%;
   display: flex;
-  
+  justify-content: center;
+  align-self: center;
+  border-radius: 10px;
 }
 
-.profiledetails-container1 {
-    width: 33.33%;
-
-    
-    
-}
-
-.profiledetails-container2 {
-    width: 33.33%;
-    height: auto;
+.profiledetails-container {
     display: flex;
     flex-direction: column;
-    background-color: #1d1f25;
+    justify-content: center;
+    width: 320px;
 }
 
-.profilePicture-container {
-    /* background-color: whitesmoke; */
-    background-color: #1d1f25;
-     width: 100%;
-     height: 250px;
-     /* border-radius: 100px; */
-     /* margin-top: 20px; */
-     display: flex;
-     justify-content: center;
-    }
+.profileInfoContainer{
+    background-color: #141518;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
 
 .upload {
     width: 100px;
@@ -1121,12 +1113,11 @@ input[type=file]::-webkit-file-upload-button {
 
 .user-profile {
     text-align: center;
+
 }
 
 .btnmodal {
-    width: 30%;
-    margin-top: 30px;
-    align-self: center;
+    margin-bottom: 20px;
 }
 
 .about-us {
@@ -1173,7 +1164,19 @@ input[type=file]::-webkit-file-upload-button {
     padding: 10px 0;
 }
 
+.contactUsForm {
+    background-color: #1d1f25;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    color: white;
+}
 
+.likeCounter {
+    position: relative;
+    font-size: 10px;
+    bottom: 20px;
+}
 
 
 

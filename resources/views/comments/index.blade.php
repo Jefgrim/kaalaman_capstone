@@ -122,28 +122,35 @@
     function likes(){
        let btnId= event.srcElement.parentNode.id
        let likeBtn = document.querySelector(`#${event.srcElement.id}`)
-       console.log(likeBtn.style.color)
+       let dislikeBtnId = `dis${likeBtn.id}`
+        let dislikeBtn = document.querySelector(`#${dislikeBtnId}`)
        if(likeBtn.style.color == "green") {
         likeBtn.style.color = "white"
        }else if(likeBtn.style.color == 'white'){
         likeBtn.style.color = "green"
+        dislikeBtn.style.color = "white"
        }
      $.ajax({
-        type: 'post',
-        url: '/',
-        data: $(`#${btnId}`).serialize()
-        });
+         type: 'post',
+         url: '/',
+         data: $(`#${btnId}`).serialize()
+         });
      }
     </script>
+    
     <script type="text/javascript">
         function dislikes(){
             let btnId= event.srcElement.parentNode.id
             let dislikekeBtn = document.querySelector(`#${event.srcElement.id}`)
-            console.log(dislikekeBtn.style.color)
+            let likeBtnId = `${dislikekeBtn.id}`
+            likeBtnId = likeBtnId.toString().replace('dis', "")
+            let likeBtn = document.querySelector(`#${likeBtnId}`)
+    
             if(dislikekeBtn.style.color == "red") {
                 dislikekeBtn.style.color = "white"
             }else if(dislikekeBtn.style.color == 'white'){
                 dislikekeBtn.style.color = "red"
+                likeBtn.style.color = "white"
             }
          $.ajax({
             type: 'post',
@@ -216,7 +223,12 @@
                                             <input type="hidden" name="commentId" value="{{$comment->id}}">
                                             <input type="hidden" name="userId" value="{{Auth::id()}}">
                                             <input type="hidden" name="status" value="liked">
-                                            <i class="fa-regular fa-thumbs-up" class="btn" id="{{$comment->id}}" onclick="likesComment(); return false"></i>
+                                           
+                                            @if(DB::table('likecomment')->where('userId','=', Auth::id())->where('commentId','=',$comment->id)->value('status') == "liked")
+                                            <i class="fa-regular fa-thumbs-up" class="btn" id="commentlike{{$comment->id}}" onclick="likesComment(); return false" style="color: green"></i>
+                                            @else
+                                            <i class="fa-regular fa-thumbs-up" class="btn" id="commentlike{{$comment->id}}" onclick="likesComment(); return false" style="color: white"></i>
+                                        @endif
                                         </form>
                                     </div>
                                     <div class="replyThumbsUp">
@@ -225,7 +237,11 @@
                                             <input type="hidden" name="commentId" value="{{$comment->id}}">
                                             <input type="hidden" name="userId" value="{{Auth::id()}}">
                                             <input type="hidden" name="status" value="dislike">
-                                            <i class="fa-regular fa-thumbs-down" class="btn" id="{{$comment->id}}" onclick="DislikesComment(); return false"></i>
+                                            @if(DB::table('dislikecomment')->where('userId','=', Auth::id())->where('commentId','=',$comment->id)->value('status') == "dislike")
+                                             <i class="fa-regular fa-thumbs-down" class="btn" id="commentdislike{{$comment->id}}" onclick="DislikesComment(); return false" style="color: red"></i>
+                                             @else
+                                             <i class="fa-regular fa-thumbs-down" class="btn" id="commentdislike{{$comment->id}}" onclick="DislikesComment(); return false" style="color: white"></i>
+                                            @endif
                                         </form>
                                         
                                     </div>
@@ -241,7 +257,16 @@
     <script type="text/javascript">
         function likesComment(){
            let btnId= event.srcElement.parentNode.id
-           console.log(btnId)
+           let likeBtn = document.querySelector(`#${event.srcElement.id}`)
+            let dislikeBtnId = `${likeBtn.id}`
+            dislikeBtnId = dislikeBtnId.toString().replace('commentlike', "commentdislike")
+                let dislikeBtn = document.querySelector(`#${dislikeBtnId}`)
+            if(likeBtn.style.color == "green") {
+                likeBtn.style.color = "white"
+            }else if(likeBtn.style.color == 'white'){
+                likeBtn.style.color = "green"
+                dislikeBtn.style.color = "white"
+            }
          $.ajax({
                 type: 'post',
                 url: '/likecomments',
@@ -253,7 +278,16 @@
         <script type="text/javascript">
             function DislikesComment(){
                let btnId= event.srcElement.parentNode.id
-               console.log(btnId)
+               let dislikeBtn = document.querySelector(`#${event.srcElement.id}`)
+               let likeBtnId = `${dislikeBtn.id}`
+                likeBtnId = likeBtnId.toString().replace('commentdislike', "commentlike")
+                let likeBtn = document.querySelector(`#${likeBtnId}`)
+                if(dislikeBtn.style.color == "red") {
+                    dislikeBtn.style.color = "white"
+                }else if(dislikeBtn.style.color == 'white'){
+                    dislikeBtn.style.color = "red"
+                    likeBtn.style.color = "white"
+            }
              $.ajax({
                     type: 'post',
                     url: '/dislikecomments',

@@ -1,5 +1,9 @@
 @extends('layouts.design')
 
+@section('title')
+    About Us  {{--name came from the database  --}}
+@endsection
+
 @section('UserIcon')
 
 @guest

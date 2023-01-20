@@ -9,6 +9,7 @@ use App\Models\Dislikethread;
 use App\Models\Thread;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use DB;
 
 class likethreadController extends Controller
 {
@@ -96,22 +97,36 @@ class likethreadController extends Controller
      */
     public function likeThread(Request $request)
     {
-        if(likeThread::where('userId','=', Auth::id())->where('threadId','=',$request->threadId)->value('userId')==Auth::id()){
-          $likedThreadId =likeThread::where('userId','=', Auth::id())->where('threadId','=',$request->threadId)->value('id');
+        if(likethread::where('userId','=', Auth::id())->where('threadId','=',$request->threadId)->value('userId') == Auth::id()){
+          $likedThreadId =likethread::where('userId','=', Auth::id())->where('threadId','=',$request->threadId)->value('id');
          
-            if(likeThread::where('userId','=', Auth::id())->where('threadId','=',$request->threadId)->value('status') == "liked") {
-                likeThread::where('id',$likedThreadId)->update(['status'=>'unlike']);
+            if(likethread::where('userId','=', Auth::id())->where('threadId','=',$request->threadId)->value('status') == "liked") {
+                likethread::where('id',$likedThreadId)->update(['status'=>'unlike']);
             }
-            else if(likeThread::where('userId','=', Auth::id())->where('threadId','=',$request->threadId)->value('status') == "unlike"){
-                likeThread::where('id',$likedThreadId)->update(['status'=>'liked']);
+            else if(likethread::where('userId','=', Auth::id())->where('threadId','=',$request->threadId)->value('status') == "unlike"){
+                likethread::where('id',$likedThreadId)->update(['status'=>'liked']);
+                $dislikedThreadId = DB::table('dislikethread')->where('threadId', '=', $request->threadId)->where('userId', '=', Auth::id())->value('id');
+                if($dislikedThreadId == null){
+                
+                } else {
+                    Dislikethread::where('id',$dislikedThreadId)->update(['status'=>'undislike']);
+                }
             }
 
         }else{
-            $likeThread= new likeThread;
+            $likeThread= new likethread;
             $likeThread->userId = Auth::id(); 
             $likeThread->threadId = $request->threadId;
             $likeThread->status =$request->status;
             $likeThread->save();
+
+            $dislikedThreadId = DB::table('dislikethread')->where('threadId', '=', $request->threadId)->where('userId', '=', Auth::id())->value('id');
+            if($dislikedThreadId == null){
+                
+            } else {
+                Dislikethread::where('id',$dislikedThreadId)->update(['status'=>'undislike']);
+            }
+
         }
        
         
