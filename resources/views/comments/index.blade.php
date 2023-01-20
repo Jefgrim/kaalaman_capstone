@@ -51,10 +51,10 @@
         <a href="/thread"><i class="fa-solid fa-circle-left"></i></a>
     </div>
 </div>
-<div class="toast sticky-top" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="false">
+<div class="toast toastComment sticky-top" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="false">
     <div class="toast-body">
       A New Comment is posted, click reload page to see the latest comment.
-      <div class="mt-2 pt-2 border-top">
+      <div class="mt-2 pt-2">
         <button type="button" class="btn btn-primary btn-sm" onclick="window.location.reload()">Reload Page</button>
         <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="toast">Close</button>
       </div>

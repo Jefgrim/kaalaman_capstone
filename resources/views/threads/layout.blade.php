@@ -118,6 +118,15 @@
         </div>
 
         <div class="threadContainer">
+          <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="false">
+            <div class="toast-body">
+              A New Thread is posted, click reload page to see the latest thread.
+              <div class="mt-2 pt-2">
+                <button type="button" class="btn btn-primary btn-sm" onclick="window.location.reload()">Reload Page</button>
+                <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="toast">Close</button>
+              </div>
+            </div>
+          </div>
           <div class="threadNavContainer">
               <div class="sideBar-toggle"><i class="fa-solid fa-bars hamburgerbtn"></i>
               </div>
