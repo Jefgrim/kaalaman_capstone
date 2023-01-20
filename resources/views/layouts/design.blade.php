@@ -21,12 +21,12 @@
               <div class="user">
                   <div class="userDropDown headerIcons">
                       <i class="fa-regular fa-user guestIcon"></i>
-                      <div class="guestUser-Section" id="userSection" style="display: none">
+                      <div class="guestUser-Section-design" id="userSection" style="display: none">
                           <span>Guest Mode</span>
                       </div>
                   </div>
                   <div class="headerIcon">
-                      <i class="fa-regular fa-lightbulb headerIcons" id="darkmodeBtn"></i>
+                      {{-- <i class="fa-regular fa-lightbulb headerIcons" id="darkmodeBtn"></i> --}}
                   </div>
               </div>
           @else
