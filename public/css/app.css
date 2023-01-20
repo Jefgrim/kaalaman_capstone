@@ -1266,6 +1266,18 @@ input[type=file]::-webkit-file-upload-button {
     margin-top: 20px;
 }
 
+.toast{
+    width: 90%;
+    background-color: #575757;
+    color: white;
+}
+
+.toastComment{
+    width: 100%;
+    background-color: #575757;
+    color: white;
+}
+
 @media screen and (max-width: 1920px) {
     .threadContainer {
         width: 90%;

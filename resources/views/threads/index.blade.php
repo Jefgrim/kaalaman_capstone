@@ -1,6 +1,15 @@
 @extends('threads.layout')
 
 @section('threadContent')
+<div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="false">
+    <div class="toast-body sticky-top">
+      A New Thread is posted, click reload page to see the latest thread.
+      <div class="mt-2 pt-2 border-top">
+        <button type="button" class="btn btn-primary btn-sm" onclick="window.location.reload()">Reload Page</button>
+        <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="toast">Close</button>
+      </div>
+    </div>
+  </div>
     @foreach ($threads as $item)
         <div class="threadContent {{$item->category}}">
             <div class="avatarTextsContainer">
