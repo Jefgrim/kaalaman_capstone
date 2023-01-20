@@ -857,6 +857,7 @@ header {
     margin-bottom: 10px;
     margin-top: 10px;
     color: var(--third-color);
+    word-break: break-word;
 }
 
 .replyReaction {
@@ -874,6 +875,13 @@ header {
 }
 
 .replyBtnContainer {
+    color: var(--third-color);
+    font-size: 30px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.editBtnContainer {
     color: var(--third-color);
     font-size: 30px;
     cursor: pointer;
@@ -1713,6 +1721,17 @@ input[type=file]::-webkit-file-upload-button {
 
 
 @media screen and (max-width: 425px) {
+    .replyReaction{
+        justify-content: center;
+    }
+    
+    .threadReaction{
+        flex-direction: row;
+    }
+
+    .thumbsUpDownContainer {
+        flex-direction: row;
+    }
     .modular {
         width: 100%;
     }
