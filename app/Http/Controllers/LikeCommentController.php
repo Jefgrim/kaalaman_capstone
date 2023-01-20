@@ -8,6 +8,7 @@ use App\Models\User;
 use App\Models\Comment;
 use Illuminate\Support\Facades\Auth;
 use App\Models\LikeComment;
+use App\Models\DislikeComment;
 use DB;
 
 class LikeCommentController extends Controller
@@ -90,22 +91,36 @@ class LikeCommentController extends Controller
 
     public function LikeComment(Request $request)
     {
-        if(likecomment::where('userId','=', Auth::id())->where('commentId','=',$request->commentId)->value('userId')==Auth::id()){
-          $likedComment =likecomment::where('userId','=', Auth::id())->where('commentId','=',$request->commentId)->value('id');
+        if(LikeComment::where('userId','=', Auth::id())->where('commentId','=',$request->commentId)->value('userId')==Auth::id()){
+          $likedComment =LikeComment::where('userId','=', Auth::id())->where('commentId','=',$request->commentId)->value('id');
          
-            if(likeComment::where('userId','=', Auth::id())->where('commentId','=',$request->commentId)->value('status') == "liked") {
-                likeComment::where('id', $likedComment)->update(['status'=>'unlike']);
+            if(LikeComment::where('userId','=', Auth::id())->where('commentId','=',$request->commentId)->value('status') == "liked") {
+                LikeComment::where('id', $likedComment)->update(['status'=>'unlike']);
             }
-            else if(likeComment::where('userId','=', Auth::id())->where('commentId','=',$request->commentId)->value('status') == "unlike"){
-                likeComment::where('id', $likedComment)->update(['status'=>'liked']);
+            else if(LikeComment::where('userId','=', Auth::id())->where('commentId','=',$request->commentId)->value('status') == "unlike"){
+                LikeComment::where('id', $likedComment)->update(['status'=>'liked']);
+
+                $dislikeCommentId = DB::table('dislikecomment')->where('commentId', '=', $request->commentId)->where('userId', '=', Auth::id())->value('id');
+                if($dislikeCommentId == null){
+                
+                } else {
+                    DislikeComment::where('id',$dislikeCommentId)->update(['status'=>'undislike']);
+                }
             }
 
         }else{
-            $likeComment= new likeComment;
+            $likeComment= new LikeComment;
             $likeComment->userId = Auth::id(); 
             $likeComment->commentId = $request->commentId;
             $likeComment->status =$request->status;
             $likeComment->save();
+
+            $dislikeCommentId = DB::table('dislikecomment')->where('commentId', '=', $request->commentId)->where('userId', '=', Auth::id())->value('id');
+            if($dislikeCommentId == null){
+                
+            } else {
+                DislikeComment::where('id',$dislikeCommentId)->update(['status'=>'undislike']);
+            }
         }
 }
 }

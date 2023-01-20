@@ -83,10 +83,16 @@ class UserProfileController extends Controller
     {
         $profile = UserProfile::find($id);
         $input = $request->all();
-        $filename = time().$request->file('image')->getClientOriginalName();
-        $path = $request->file('image')->storeAs('images', $filename, 'public'); //saved to public images folder
-        $input['image'] = '/storage/' . $path; 
+        if ($request->image == null){
+
+        }else{
+            $filename = time().$request->file('image')->getClientOriginalName();
+            $path = $request->file('image')->storeAs('images', $filename, 'public'); //saved to public images folder
+            $input['image'] = '/storage/' . $path; 
+        }
         $profile->update($input);
+        
+        return redirect("/profile/$id");
     }
 
     /**
