@@ -191,7 +191,7 @@
               <div class="footer-col">         
                 <ul class="footer-links">    
                     <li><a href="/about">Mission</a></li>
-                    <li><a href="/ContactUs">Contact Us</a></li>
+                    {{-- <li><a href="/ContactUs">Contact Us</a></li> --}}
                 </ul>
               </div>
 
