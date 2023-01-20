@@ -9,13 +9,13 @@
     --fifth-color: #1c1c1de8;
 }
 
-.LigthMode {
+/* .LigthMode {
     --primary-color: white;
     --secondary-color: rgba(245, 245, 245, 0.555);
     --third-color: black;
     --fourth-color: #f3efe0;
     --fifth-color: rgb(196, 196, 196);
-}
+} */
 
 *{
     padding: 0;
@@ -62,15 +62,15 @@ header {
 }
 
 .user {
-    margin-right: 20px;
+    margin-right: 70px;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
 }
 
 .userDropDown img {
-    height: 50px;
-    width: 200%;
+    height: 65px;
+    width: 65px;
     cursor: pointer;
     margin-right: 10px;
 }
@@ -115,7 +115,7 @@ header {
     background-color: var(--primary-color);
     position: absolute;
     z-index: 1;
-    margin-top: 60px;
+    margin-top: 150px;
     display: flex;
     flex-direction: column;
     color: var(--third-color);
@@ -169,7 +169,7 @@ header {
 .sidebar {
     background-color: var(--secondary-color);
     height: 100%;
-    width: 10%;
+    width: 20%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -211,6 +211,7 @@ header {
     margin-left: 10px;
     margin-bottom: 10px;
     color: whitesmoke;
+    margin: 10px;
     
 }
 
@@ -220,11 +221,18 @@ header {
 
 .categories-h2 {
     font-size: 20px;
+    margin-top: 13px;
 }
 
 .categoryContainer input {
     cursor: pointer;
 }
+
+.label-categories {
+    margin-left: 10px;
+}
+
+
 
 
 
@@ -240,7 +248,7 @@ header {
 
 .threadContainer {
     min-height: 100%;
-    width: 70%;
+    width: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -249,8 +257,12 @@ header {
 
 .threadNavContainer {
     min-height: 50px;
-    width: 95%;
+    width: 90%;
     margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+    
 }
 
 .sideBar-toggle {
@@ -261,31 +273,78 @@ header {
     font-size: 45px;
 }
 
-.searchBar {
+.writethread {
+    width: 50%;
+    display: flex;
+    
+}
+
+.write-icon {
+    display: none!important;
+}
+
+.writethreadbtn {
     height: 100%;
-    width: 70%;
+    width: 100%;
     display: flex;
     flex-direction: row;
+    border: 0;
+    outline: none;
+    color: black;
+    padding-top: 12px;
+    border-radius: 10px 10px 10px 10px;
+    font-size: 20px;
+    padding-left: 25px;
+    background-color: #575757;
+    color: whitesmoke;
+}
+
+
+
+.writethreadbtn:hover {
+    background-color: #767676;
+}
+.searchbarcontainer{
+    width: 50%;
+    display: flex;
+    /* margin-left: 60px; */
+    /* gap: 40px; */
+}
+.searchBar {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-left: 30px;
+    
 }
 
 .searchBarinput {
     border: 0;
     outline: none;
     color: black;
-    width: 80%;
+    width: 100%;
     border-radius: 10px 0px 0px 10px;
     font-size: 20px;
     padding-left: 25px;
 }
 
 .searchBarLogo {
-    width: 5%;
+    width: 10%;
     font-size: larger;
     background-color: var(--primary-color);
-    padding: 20px 0px 20px 20px;
+    /* padding: 20px 20px 20px 20px; */
     display: flex;
     color: var(--third-color);
+    border-radius: 0px 10px 10px 0px;
+    background-color: green;
+    padding-top: 16px;
+    padding-left: 30px;
+    
+     
 }
+
+
 
 .hidePostThreadBtn {
     color: var(--third-color);
@@ -298,13 +357,14 @@ header {
 
 .threadContentContainer {
     height: 800px;
-    width: 95%;
+    width: 90%;
     display: flex;
     flex-direction: column;
     align-items: center;
     overflow-y: scroll;
     padding-bottom: 20px;
     margin-bottom: 20px;
+    
 }
 
 .threadContentContainer::-webkit-scrollbar {
@@ -563,7 +623,7 @@ header {
 }
 
 .creatorContainer {
-    width: 95%;
+    width: 90%;
     background-color: var(--primary-color);
     margin-bottom: 20px;
     margin-top: 20px;
@@ -967,6 +1027,7 @@ header {
     overflow-y: scroll;
     color: white;
     line-height: 1.8;
+   
 }
 
 .centerContainer::-webkit-scrollbar {
@@ -1088,6 +1149,9 @@ a {
     border-radius: 50%;
 } */
 
+.user-icon {
+    border-radius: 50%;
+}
 .upload .round {
     position:absolute;
     bottom: 0;
@@ -1127,7 +1191,7 @@ input[type=file]::-webkit-file-upload-button {
     margin: auto;
     /* border: 3px solid green; */
     padding: 10px;
-    margin-top: 20px;
+    margin-top: 80px;
     /* inline-size: 500px; */
     overflow-wrap: break-word;
     
@@ -1164,6 +1228,26 @@ input[type=file]::-webkit-file-upload-button {
     padding: 10px 0;
 }
 
+.contactUsPage {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 150px;
+}
+
+.enter-email1 {
+    
+    width: 400px;
+}
+
+.enter-message {
+    height: 250px;
+    width: 400px;
+  }
+  
 .contactUsForm {
     background-color: #1d1f25;
     padding: 20px;
@@ -1178,41 +1262,123 @@ input[type=file]::-webkit-file-upload-button {
     bottom: 20px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 .rules {
     margin-top: 20px;
 }
 
-/* @media screen and (max-width: 1668px) {
-    .sidebar {
-        width: auto;
-        font-size: 14px;
+@media screen and (max-width: 1920px) {
+    .threadContainer {
+        width: 90%;
+    
     }
-} */
+    .sidebar {
+        width: 10%;
+    }
 
-/* @media screen and (max-width: 1430px) {
-    .sidebar {
-        width: auto;
-        font-size: 12px;
+    .searchBar {
+        width: 94.8%;
     }
-} */
+
+    .searchBarLogo {
+        padding-left: 25px;
+    }
+}
+
+    /* .writethreadbtn {
+        width: 94.8%;
+        margin: 40px;
+    } */
+
+    @media screen and (max-width: 1772px) {
+        .threadContainer {
+            width: 89%;
+        
+        }
+        .sidebar {
+            width: 11%;
+        }
+   
+}
+
+@media screen and (max-width: 1743px) {
+    .searchBarLogo {
+        padding-left: 25px;
+    }
+}
+
+
+@media screen and (max-width: 1644px) {
+    .searchBarLogo {
+        padding-left: 22px;
+    }
+}
+
+@media screen and (max-width: 1581px) {
+    .threadContainer {
+        width: 88%;
+    
+    }
+    .sidebar {
+        width: 12%;
+    }
+}
+
+@media screen and (max-width: 1533px) {
+   .searchBarLogo {
+        padding-left: 20px;
+   }
+}
+
+@media screen and (max-width: 1419px) {
+    .searchBarLogo {
+        padding-left: 20px;
+    }
+}
+
+@media screen and (max-width: 1317px) {
+    .threadContainer {
+        width: 86%;
+    
+    }
+    .sidebar {
+        width: 14%;
+    }
+
+    .searchBarLogo {
+        margin-right: 5px;
+    }
+}
+
+@media screen and (max-width: 1351px) {
+    .searchBarLogo {
+        padding-left: 13px;
+    }
+}
+
+@media screen and (max-width: 1248px) {
+    .searchBarLogo {
+        width: 50px;
+    }
+}
+
+@media screen and (max-width: 1164px) {
+    .threadContainer {
+        width: 84%;
+    
+    }
+    .sidebar {
+        width: 16%;
+    }
+
+    .searchBarLogo {
+        padding-left: 10px;
+   }
+}
 
 @media screen and (max-width: 1024px) {
-    .sidebar,
-    .rightContainer {
-        width: 20%;
+    .sidebar
+     {
+        width: 16%;
     }
 
     .threadContent {
@@ -1221,7 +1387,7 @@ input[type=file]::-webkit-file-upload-button {
     }
 
     .threadContainer {
-        width: 65%;
+        width: 84%;
     }
 
     .avatarTextsContainer {
@@ -1240,7 +1406,8 @@ input[type=file]::-webkit-file-upload-button {
     }
 
     .searchBarLogo {
-        padding: 13px;
+        padding-right: 8px;
+        
     }
 
     .expandPostThread {
@@ -1275,6 +1442,12 @@ input[type=file]::-webkit-file-upload-button {
         height: 20px;
     }
 }
+
+@media screen and (max-width: 1017px) {
+    .searchBarLogo {
+        padding-left: 9px;
+    }
+}
 @media screen and (max-width: 876px){
     .sideBar-toggle {
         display: flex;
@@ -1290,13 +1463,11 @@ input[type=file]::-webkit-file-upload-button {
     }
 
     
-    .hidePostThreadBtn {
-        display: flex;
-    }
+ 
 
     .threadNavContainer {
         display: flex;
-        justify-content: flex-end;
+        justify-content: space-around;
     }
 
     .searchBar {
@@ -1412,11 +1583,84 @@ input[type=file]::-webkit-file-upload-button {
     } */
 }
 
-@media screen and (max-width: 690px) {
-    .footer-row {
+@media screen and (max-width: 720px) {
+    .searchBarLogo {
+        padding-left: 6px;
+    }
+}
+
+@media screen and (max-width: 690px)  {
+
+    .creatorContainer {
+        height: 130px;
+        display: inline-block;
+        
+      }
+
+      .searchBarLogo {
+        width: 60px;
+        padding-left: 15px;
+    }
+      
+}
+
+
+
+@media screen and (max-width: 661px) {
+    .searchBarLogo {
+        padding-left: 16px;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .searchBarLogo {
+        padding-left: 14px;
+    }
+}
+
+@media screen and (max-width: 555px) {
+    .write-icon {
+        display: flex!important;
+        
+    }
+
+    .writethread {
+        display: none;
+    }
+
+    .searchBarinput {
+        width: 100% !important;
+    }
+    .searchbarcontainer {
+        width: 80%;
+    }
+   
+    .sideBar-toggle {
+        margin-left: 7px;
+    }
+
+    .hidePostThreadBtn {
+        margin-right: -15px;
+    }
+
+    .hidePostThreadBtn {
+        display: flex;
+    }
+
+    .threadReaction {
         display: flex;
         flex-direction: column;
     }
+
+    .thumbsUpDownContainer {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .searchBarLogo {
+        padding-left: 17px;
+    }
+  
 }
 
 

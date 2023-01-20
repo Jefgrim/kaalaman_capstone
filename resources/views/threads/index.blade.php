@@ -120,14 +120,14 @@ function likes(){
                
             <a class="Register" href="{{ route('register') }}">Register</a>
             
-            <i id="expandBtn"></i>
+            <i id="expandBtn" ></i>
         </div>
             
         </form>
     @else
         <form class="postThreadContent" action="/thread" method="post">
             {{ csrf_field() }}
-            <div class="h2Container">
+            {{-- <div class="h2Container">
             <h2 class="thread-post">CREATE A THREAD</h2>
             
             </div>
@@ -162,9 +162,9 @@ function likes(){
                 <div class="postbutton">
                     <button type="submit" id="postBtn" class="postBtn">Post</button>
                 </div>
+             --}}
             
-            
-            </div>
+            {{-- </div> --}}
       </form>
     @endguest
 
@@ -284,7 +284,7 @@ function likes(){
 
 @section('hidePostThreadBtn')
 @guest
-<div class="hidePostThreadBtn"><i class="fa-solid fa-up-right-and-down-left-from-center"></i></div>
+<div ></div>
 @else
 <div class="hidePostThreadBtn"><i class="fa-solid fa-pen-to-square"></i></div>
 @endguest
