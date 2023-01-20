@@ -20,19 +20,33 @@
       <header> 
        <a href="/"><img src={{asset("./images/kaalaman-logo.png")}} class="logo" alt="" /></a>
         @guest
-              <div class="user">
-                  <div class="userDropDown headerIcons">
-                      <i class="fa-regular fa-user guestIcon"></i>
-                      <div class="guestUser-Section" id="userSection" style="display: none">
-                          <span>Guest Mode</span>
-                      </div>
-                  </div>
-                  <div class="headerIcon">
-                      <i class="fa-regular fa-lightbulb headerIcons" id="darkmodeBtn"></i>
-                  </div>
+        <div class="user">
+          <div class="userDropDown headerIcons">
+              <i class="fa-regular fa-user guestIcon"></i>
+              <div class="guestUser-Section" id="userSection" style="display: none">
+                  
+                  
+                  <a class="Log-in" href="{{ route('login') }}">Log-in</a> 
+               
+            <a class="Register" href="{{ route('register') }}">Register</a>
               </div>
+          </div>
+          <div class="headerIcon">
+              <i id="darkmodeBtn"></i>
+          </div>
+      </div>  
           @else
               <div class="user">
+                
+
+                  <div class="headerIcon">
+                    <i class="fa-regular fa-bell headerIcons" id="notification"></i>
+                    
+                    @yield('notificationSection')
+                  
+                      <i class="fa-regular fa-lightbulb headerIcons" id="darkmodeBtn"></i>
+                  </div>
+
                   <div class="userDropDown headerIcons">
                     @if (Auth::user()->image == null)
                       <img class="user-icon" src="{{asset("./images/defaultDp.png")}}" width="100" height="100" alt="" style="border-radius: 100%">
@@ -54,14 +68,7 @@
                         
                       </div>
                   </div>
-
-                  <div class="headerIcon">
-                    <i class="fa-regular fa-bell headerIcons" id="notification"></i>
-                    
-                    @yield('notificationSection')
                   
-                      <i class="fa-regular fa-lightbulb headerIcons" id="darkmodeBtn"></i>
-                  </div>
               </div>
           @endguest
       </header>
@@ -82,25 +89,25 @@
             </div>
             <div class="categoryContainer">
               <input type="checkbox" name="category" id="ecommerceBtn" /><label
-                for="E-Commerce"
+                for="E-Commerce" class="label-categories"
                 >E-Commerce <span id="ecommCategoryCounter">0</span></label
               >
             </div>
             <div class="categoryContainer">
               <input type="checkbox" name="category" id="healthBtn" /><label
-                for="Health & lifestyle"
+                for="Health & lifestyle" class="label-categories"
                 >Health/Lifestyle <span id="healthCategoryCounter">0</span></label
               >
             </div>
             <div class="categoryContainer">
               <input type="checkbox" name="category" id="gameBtn" /><label
-                for="Games"
+                for="Games" class="label-categories"
                 >Games <span id="gamesCategoryCounter">0</span></label
               >
             </div>
             <div class="categoryContainer">
               <input type="checkbox" name="category" id="foodBtn" /><label
-                for="Food"
+                for="Food" class="label-categories"
                 >Food <span id="foodCategoryCounter">0</span></label
               >
             </div>
@@ -112,20 +119,28 @@
 
         <div class="threadContainer">
           <div class="threadNavContainer">
-            <div class="sideBar-toggle"><i class="fa-solid fa-bars"></i></div>
-            <div class="searchBar">
-              <input
-                type="text"
-                class="input searchBarinput"
-                placeholder="search"
-                id="seacrhInput"
-                name="seacrhInput"
-              />
-              <i class="fa-solid fa-magnifying-glass searchBarLogo"></i>
+              <div class="sideBar-toggle"><i class="fa-solid fa-bars hamburgerbtn"></i>
+              </div>
+
+              <div class="writethread">
+                  <button class="writethreadbtn" id="expandBtn">Write a thread</button>
+                  <i class="fa-regular fa-pen-to-square text-light fs-1 write-icon"></i>
+              </div>
+            
+            <div class="searchbarcontainer">
+              <div class="searchBar">
+                  <input
+                      type="text"
+                      class="input searchBarinput"
+                      placeholder="search"
+                      id="seacrhInput"
+                      name="seacrhInput"/>
+                          <i class="fa-solid fa-magnifying-glass searchBarLogo"></i>
 
               
-             @yield('hidePostThreadBtn')
+                      @yield('hidePostThreadBtn')
              
+                </div>
             </div>
           </div>
 
@@ -182,7 +197,7 @@
             </footer> 
           </div>
         </div>
-        <div class="rightContainer">
+        {{-- <div class="rightContainer">
           <div class="postThreadContainer" >
             @yield('postThreadContent')
           </div>
@@ -192,7 +207,7 @@
                 @yield('latestContent')
             </div>
           </div>
-        </div>
+        </div> --}}
       </div>
     </div>
 
