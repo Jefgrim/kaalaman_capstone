@@ -280,6 +280,49 @@
        $.ajaxSetup({ headers: { 'csrftoken' : '{{ csrf_token() }}' } });
         </script> 
 
+        
+ <script type="text/javascript">
+  function likes(){
+     let btnId= event.srcElement.parentNode.id
+     let likeBtn = document.querySelector(`#${event.srcElement.id}`)
+     let dislikeBtnId = `dis${likeBtn.id}`
+      let dislikeBtn = document.querySelector(`#${dislikeBtnId}`)
+     if(likeBtn.style.color == "green") {
+      likeBtn.style.color = "white"
+     }else if(likeBtn.style.color == 'white'){
+      likeBtn.style.color = "green"
+      dislikeBtn.style.color = "white"
+     }
+   $.ajax({
+       type: 'post',
+       url: '/',
+       data: $(`#${btnId}`).serialize()
+       });
+   }
+  </script>
+  
+  <script type="text/javascript">
+      function dislikes(){
+          let btnId= event.srcElement.parentNode.id
+          let dislikekeBtn = document.querySelector(`#${event.srcElement.id}`)
+          let likeBtnId = `${dislikekeBtn.id}`
+          likeBtnId = likeBtnId.toString().replace('dis', "")
+          let likeBtn = document.querySelector(`#${likeBtnId}`)
+  
+          if(dislikekeBtn.style.color == "red") {
+              dislikekeBtn.style.color = "white"
+          }else if(dislikekeBtn.style.color == 'white'){
+              dislikekeBtn.style.color = "red"
+              likeBtn.style.color = "white"
+          }
+       $.ajax({
+          type: 'post',
+          url: '/dislike',
+          data: $(`#${btnId}`).serialize(),
+          });
+       }
+  </script>
+
 {{-- <script type="text/javascript"> 
 
 let Parent = document.querySelector('.threadContentContainer').children;
