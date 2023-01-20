@@ -54,8 +54,8 @@
                   </div>
 
                   <div class="headerIcon">
-                      <i class="fa-regular fa-bell headerIcons" id="notification"></i>
-                      <i class="fa-regular fa-lightbulb headerIcons" id="darkmodeBtn"></i>
+                      {{-- <i class="fa-regular fa-bell headerIcons" id="notification"></i>
+                      <i class="fa-regular fa-lightbulb headerIcons" id="darkmodeBtn"></i> --}}
                   </div>
               </div>
           @endguest

@@ -298,3 +298,14 @@ function likes(){
 <div class="hidePostThreadBtn"><i class="fa-solid fa-pen-to-square"></i></div>
 @endguest
 @endsection
+
+@section('writethread')
+@guest
+@else
+<div class="writethread">
+    <button class="writethreadbtn" id="expandBtn">Write a thread</button>
+    <i class="fa-regular fa-pen-to-square text-light fs-1 write-icon"></i>
+</div>
+@endguest
+
+@endsection
