@@ -80,6 +80,7 @@
             @yield('fPassword')
             @yield('register')
             @yield('404')
+            @yield('edit')
           </div>
 
           <div class="creatorContainer">

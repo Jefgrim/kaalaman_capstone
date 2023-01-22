@@ -86,7 +86,7 @@ class ThreadController extends Controller
      */
     public function edit($id)
     {
-        //
+       //
     }
 
     /**
@@ -140,7 +140,7 @@ class ThreadController extends Controller
         '<div class="threadContent '.$thread->category.'">'.
                 '<div class="avatarTextsContainer">'.
                     '<div class="threadUserAvatar">'.
-                        '<img src=".//images/Avatar Users2_1.png">'.
+                   '<img class="user-icon" src=".'.$thread->users->image.'" width="100" height="100" style="border-radius: 100%" alt="">'.
                         '<span>'.$thread->users->name.'</span>'.
                     '</div>'.
                     '<div class="threadTextsContainer">'.

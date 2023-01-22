@@ -71,6 +71,7 @@ Route::get('/404',function (){
 
 
 
+
 Route::get("/", [ThreadController::class, 'index']);
 // Route::resources([
 //     'thread' => ThreadController::class,
@@ -84,7 +85,7 @@ Route::resource("/like", likethreadController::class);
 Auth::routes();
 
 
- 
+ Route::get('/thread.edit', [ThreadController::class, 'edit']);
  Route::get('/', [ThreadController::class, 'searchThread']);
  Route::post('/', [likethreadController::class, 'likeThread']);
  Route::post('/dislike', [DislikethreadController::class, 'Dislikethread']);
