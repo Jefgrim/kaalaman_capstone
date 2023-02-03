@@ -86,7 +86,9 @@ class ThreadController extends Controller
      */
     public function edit($id)
     {
-       //
+         $thread = Thread::find($id);
+         return view("edit.index",compact('thread'));
+        
     }
 
     /**
@@ -98,7 +100,16 @@ class ThreadController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $thread = Thread::find($id);
+        $thread->title = $request->input('title');
+        $thread->category = $request->input('category');
+        $thread->threadpost = $request->input('threadpost');
+        $thread->update();
+        return redirect('/')->with('status',"Data UPDATED");
+       
+        // $title = request()->title;
+        // $category = request()->category;
+        // $threadpost = request()->threadpost;
     }
 
     /**
