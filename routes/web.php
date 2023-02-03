@@ -67,15 +67,16 @@ Route::get('/404',function (){
     return view('404.index');
 });
 
+// Route::get('/editThread',function (){
+//     return view('edit.index');
+// });
+
 
 
 
 
 Route::get("/", [ThreadController::class, 'index']);
-// Route::resources([
-//     'thread' => ThreadController::class,
-//     'profile' => ProfileController::class,
-// ]);
+
 
 Route::resource("/thread", ThreadController::class);
 Route::resource("/thread/comments", CommentController::class);
@@ -84,7 +85,9 @@ Route::resource("/like", likethreadController::class);
 Auth::routes();
 
 
- 
+
+ Route::get('edit/{id}', [ThreadController::class, 'edit']);
+ Route::get('update-data/{id}', [ThreadController::class, 'update']);
  Route::get('/', [ThreadController::class, 'searchThread']);
  Route::post('/', [likethreadController::class, 'likeThread']);
  Route::post('/dislike', [DislikethreadController::class, 'Dislikethread']);
