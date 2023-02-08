@@ -65,9 +65,14 @@
                 @endguest
                 <div class="replyBtnContainer">
                     <a href='{{url('/thread/comments/'.$item->id)}}'><i class="fa-solid fa-comment-dots"></i></a>
-                    @if(auth()->user()->id === $item->userId)
+                    @guest
+                    <a href='{{url('edit/'.$item->id)}}'><i class="fa-solid fa-pen" style="display:none"></i></a>
+                    @else
+                    @if(auth()->user()->id == $item->userId)
                     <a href='{{url('edit/'.$item->id)}}'><i class="fa-solid fa-pen"></i></a>
                     @endif
+                    @endguest    
+                  
                 </div>
                 
             </div>
