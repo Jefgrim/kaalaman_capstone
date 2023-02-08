@@ -24,8 +24,8 @@
               required
             />
             <select id="expandedSelectCategory" class="selectCategory"  name="category" value="{{$thread->category}}" required>
-              <option ></option>
-              <option value="{{$thread->category}}"selected disabled>Select Category</option>
+              <option></option>
+              <option disabled>Select Category</option>
               <option value="Technology">Technology</option>
               <option value="E-commerce">E-Commerce</option>
               <option value="Health-Lifestyle">Health & Lifestyle</option>
@@ -34,7 +34,7 @@
             </select>
           </div>
           <div class="threadInpContainer" >
-            <textarea value="{{$thread->threadpost}}" id="expandedThreadInp" class="threadInp" name="threadpost" required maxlength="255"></textarea>
+            <textarea id="expandedThreadInp" class="threadInp" name="threadpost" required maxlength="255">{{$thread->threadpost}}</textarea>
           </div>
           <div class="threadBtnContainer">
             
