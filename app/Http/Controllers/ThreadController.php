@@ -11,6 +11,7 @@ use App\Models\User; //add contact model, since model gets the data from the dat
 use Illuminate\Support\Facades\Auth;
 use App\Events\newThreadPost;
 use DB;
+use App\Models\UserProfile;
 
 class ThreadController extends Controller
 {
@@ -85,10 +86,27 @@ class ThreadController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
-         $thread = Thread::find($id);
-         return view("edit.index",compact('thread'));
-        
+    {   
+
+        /**
+         * arog lang kaini gibuhon mo para malinig ang code
+         * dapat camel format ka user_id thread_id bako arog kaiyan ay bako palan yan camel format
+         * ddapat user_id hayop hjahahahah
+         *tapos arog kaini gibuhon mo 
+
+         */
+
+        $userId = auth()->user()->id;
+        $thread = Thread::where('id', $id)->where('userId', $userId)->first();
+
+        if(!$thread){
+            return view('404.index');
+            // error thread not found
+        }
+
+        return view("edit.index",compact('thread'));
+
+
     }
 
     /**
@@ -151,7 +169,7 @@ class ThreadController extends Controller
         '<div class="threadContent '.$thread->category.'">'.
                 '<div class="avatarTextsContainer">'.
                     '<div class="threadUserAvatar">'.
-                   '<img class="user-icon" src=".'.$thread->users->image.'" width="100" height="100" style="border-radius: 100%" alt="">'.
+                   '<img class="user-icon" src=".'.($thread->users->image == null ? '/images/defaultDp.png' : $thread->users->image).'" width="100" height="100" style="border-radius: 100%" alt="">'.
                         '<span>'.$thread->users->name.'</span>'.
                     '</div>'.
                     '<div class="threadTextsContainer">'.
