@@ -87,6 +87,7 @@ Auth::routes();
 
 
  Route::get('edit/{id}', [ThreadController::class, 'edit']);
+ Route::get('edit/comments/{id}', [CommentController::class, 'edit']);
  Route::get('update-data/{id}', [ThreadController::class, 'update']);
  Route::get('/', [ThreadController::class, 'searchThread']);
  Route::post('/', [likethreadController::class, 'likeThread']);

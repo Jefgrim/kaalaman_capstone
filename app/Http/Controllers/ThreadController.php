@@ -88,14 +88,6 @@ class ThreadController extends Controller
     public function edit($id)
     {   
 
-        /**
-         * arog lang kaini gibuhon mo para malinig ang code
-         * dapat camel format ka user_id thread_id bako arog kaiyan ay bako palan yan camel format
-         * ddapat user_id hayop hjahahahah
-         *tapos arog kaini gibuhon mo 
-
-         */
-
         $userId = auth()->user()->id;
         $thread = Thread::where('id', $id)->where('userId', $userId)->first();
 
