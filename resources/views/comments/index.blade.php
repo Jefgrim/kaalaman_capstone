@@ -113,6 +113,9 @@
             </div>
             <div class="replyBtnContainer">
                 <i class="fa-solid fa-reply" type="button" data-bs-toggle="modal" data-bs-target="#replyModal" id="{{$thread->users->name}}" onclick="replyClick()"></i>
+                @if(auth()->user()->id == $thread->userId)
+                <a href='{{url('edit/'.$thread->id)}}'><i class="fa-solid fa-pen"></i></a>
+                @endif
             </div>
         @endguest
     </div>
@@ -248,6 +251,9 @@
                                 </div>
                                 <div class="replyBtnContainer post5Batch" id="{{$comment->id}}">
                                     <i class="fa-solid fa-reply" type="button" data-bs-toggle="modal" data-bs-target="#replyModal" id="{{$comment->userscomment->name}}" onclick="replyClick()"></i>
+                                    @if(auth()->user()->id == $comment->userId)
+                                    <a href='{{url('edit/comments/'.$comment->id)}}'><i class="fa-solid fa-pen"></i></a>
+                                    @endif
                                 </div>
                             @endguest
                         </div>

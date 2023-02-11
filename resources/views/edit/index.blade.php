@@ -23,14 +23,14 @@
               name="title"
               required
             />
-            <select id="expandedSelectCategory" class="selectCategory"  name="category" value="{{$thread->category}}" required>
+            <select id="expandedSelectCategory" class="selectCategory"  name="category"  required>
               <option></option>
               <option disabled>Select Category</option>
-              <option value="Technology">Technology</option>
-              <option value="E-commerce">E-Commerce</option>
-              <option value="Health-Lifestyle">Health & Lifestyle</option>
-              <option value="Games">Games</option>
-              <option value="Food-Beverages">Food & Beverages</option>
+              <option value="Technology" {{ $thread->category == 'Technology' ? 'selected' : '' }} >Technology</option>
+              <option value="E-commerce" {{ $thread->category == 'E-commerce' ? 'selected' : '' }}>E-Commerce</option>
+              <option value="Health-Lifestyle" {{ $thread->category == 'Health-Lifestyle' ? 'selected' : '' }}>Health & Lifestyle</option>
+              <option value="Games" {{ $thread->category == 'Games' ? 'selected' : '' }}>Games</option>
+              <option value="Food-Beverages" {{ $thread->category == 'Food-Beverages' ? 'selected' : '' }}>Food & Beverages</option>
             </select>
           </div>
           <div class="threadInpContainer" >

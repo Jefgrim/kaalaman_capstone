@@ -78,7 +78,16 @@ class CommentController extends Controller
      */
     public function edit($id)
     {
-        //
+        $userId = auth()->user()->id;
+        $comments= comment::where('id', $id)->where('userId', $userId)->first();;
+
+        if(!$comments){
+            return view('404.index');
+            // error thread not found
+        }
+     
+        return view("editComment.index",compact('comments'));
+
     }
 
     /**

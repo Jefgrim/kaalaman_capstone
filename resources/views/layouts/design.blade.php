@@ -81,6 +81,7 @@
             @yield('register')
             @yield('404')
             @yield('edit')
+            @yield('editComment')
           </div>
 
           <div class="creatorContainer">
